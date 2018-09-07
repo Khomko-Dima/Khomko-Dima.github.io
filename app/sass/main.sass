@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5
 			text-transform: uppercase
 			color: $accent
 	&-menu
-		font-size: 14px
+		font-size: 16px
 		margin-right: 50px
 		ul 
 			list-style: none
@@ -92,21 +92,59 @@ h1, h2, h3, h4, h5
 				text-transform: uppercase
 				color: $accent
 				font-weight: 900
-
+section
+	margin-top: 120px
+	position: relative
+	h2
+		font-weight: bold
+		font-size: 30px
 .s 
 	&-welcome
-		margin-top: 120px
 		position: relative
-		h2
-			font-weight: bold
-			font-size: 30px
-			span
-				text-transform: uppercase
-				color: $accent
+		span
+			text-transform: uppercase
+			color: $accent
 		p 
 			color: #8f8e91
 			margin-top: 16px
-
+	&-meetus
+		position: relative
+		.team
+			min-height: 355px
+			background-size: cover
+			background-position: center
+			overflow: hidden
+			position: relative
+			.fa 
+				display: none
+				font-size: 18px
+				margin-top: 270px
+				width: 100%
+				border-top: 1px solid #fff
+				border-bottom: 1px solid #fff
+				i 
+					margin-left: 8px
+					color: #fff
+			&-name
+				width: 100%
+				height: auto
+				position: absolute
+				left: 0
+				bottom: 0
+				background-color: $grey
+				color: #fff
+				padding: 6px
+				strong
+					font-weight: bold
+					font-size: 18px
+				p 
+					margin: 0
+					font-size: 14px
+					font-weight: 100
+			&:hover
+				.fa 
+					display: block
+		
 .servise
 	&-box
 		padding: 15px
