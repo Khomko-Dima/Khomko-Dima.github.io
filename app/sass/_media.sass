@@ -6,15 +6,40 @@
 
 //Extra large: ≥1200px
 +media-breakpoint-down(xl)
-
+	.top_nav-menu
+		margin-right: 0
 //Large: ≥992px
 +media-breakpoint-down(lg)
-
+	.top_nav-menu ul
+		padding-left: 0
 //Medium: ≥768px
 +media-breakpoint-down(md)
-
+	.center
+		&-slogan
+			h1
+				font-size: 30px
 //Small: ≥576px
 +media-breakpoint-down(sm)
+	.top_nav-menu ul 
+		li
+			flex-wrap: wrap
+			a
+				padding-left: 10px
+				padding-right: 10px
+	.s-welcome
+		h2
+			font-size: 25px
+		p 
+			font-size: 14px
+	section 
+		margin-top: 50px
+	.team
+		margin: auto
+		margin-bottom: $gutter
+	.servise-box
+		max-width: 360px
+		margin: auto
+		margin-bottom: $gutter
 
 //Extra small: >0
 +media-breakpoint-down(xs)

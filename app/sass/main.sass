@@ -111,20 +111,37 @@ section
 		position: relative
 		.team
 			min-height: 355px
+			max-width: 269px
 			background-size: cover
 			background-position: center
 			overflow: hidden
 			position: relative
+			overflow: hidden
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background-color: $accent
+				transition: opacity 0.7s ease
+				opacity: 0
 			.fa 
-				display: none
+				opacity: 0
+				position: relative
+				z-index: 2
 				font-size: 18px
 				margin-top: 270px
 				width: 100%
 				border-top: 1px solid #fff
 				border-bottom: 1px solid #fff
+				transition: opacity 0.5s ease
 				i 
-					margin-left: 8px
+					margin-left: 10px
+					margin-right: 10px
 					color: #fff
+					cursor: pointer
 			&-name
 				width: 100%
 				height: auto
@@ -142,8 +159,35 @@ section
 					font-size: 14px
 					font-weight: 100
 			&:hover
+				&::after
+					opacity: 0.5
 				.fa 
-					display: block
+					opacity: 1
+				.team-name
+					opacity: 0
+	&-works
+		#Container .mix
+			display: none
+		.mix 
+			min-height: 390px
+		.button-works
+			display: flex
+			position: relative
+			justify-content: center
+		button
+			outline: none
+			border: none
+			background: none
+		    border: 0
+		    color: inherit
+		    font: inherit
+		    line-height: normal
+		    overflow: visible
+		    padding: 0
+		    cursor: pointer
+		img
+			width: 390px
+			height: 390px 		
 		
 .servise
 	&-box
@@ -168,6 +212,5 @@ section
 			h3,i
 				color: $accent
 		
-
 
 @import "media" // Always at the end
