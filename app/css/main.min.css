@@ -2478,6 +2478,9 @@ section {
 .s-works #Container .mix {
   display: none; }
 
+.s-works .mix {
+  min-height: 390px; }
+
 .s-works .button-works {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2500,6 +2503,10 @@ section {
     background-overflow: visible;
     background-padding: 0;
     background-cursor: pointer; }
+
+.s-works img {
+  width: 390px;
+  height: 390px; }
 
 .servise-box {
   padding: 15px;
@@ -2559,8 +2566,6 @@ section {
   .servise-box {
     max-width: 360px;
     margin: auto;
-    margin-bottom: 30px; }
-  .mix img {
-    margin: 0 auto; } }
+    margin-bottom: 30px; } }
 
 /*==========  Mobile First  ==========*/
