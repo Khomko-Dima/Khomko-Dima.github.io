@@ -28,7 +28,9 @@
 </head>
 
 <body>
-
+<div class="preloader">
+	<div class="round1"></div>
+</div>
 <header class="header" style="background-image: url(img/bg-1.jpg);">
 	<div class="top_nav">
 	<div class="container">
@@ -44,11 +46,11 @@
 				<nav class="top_nav-menu">
 					<ul>
 						<li>
-							<a href="#">HOME</a>
-							<a href="#">SERVICE</a>
-							<a href="#">PRICING</a>
-							<a href="#">PORTFOLIO</a>
-							<a href="#">CONTACT US</a>
+							<a href="#" class="scrollto">HOME</a>
+							<a href="#s-welcome" class="scrollto">SERVICE</a>
+							<a href="#s-plans" class="scrollto">PRICING</a>
+							<a href="#s-works" class="scrollto">PORTFOLIO</a>
+							<a href="#s-say" class="scrollto">CONTACT US</a>
 						</li>
 					</ul>
 				</nav>
@@ -71,7 +73,7 @@
 		</div>
 </header>
 
-<section class="s-welcome">
+<section class="s-welcome" id="s-welcome">
 	<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-10 text-center">
@@ -128,7 +130,7 @@
 			</div>
 		</div>
 </section>
-<section class="s-meetus">
+<section class="s-meetus" id="s-meetus">
 	<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-10 text-center">
@@ -193,7 +195,7 @@
 		</div>
 
 </section>
-<section class="s-works">
+<section class="s-works" id="s-works">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-10 text-center offset-1">
@@ -226,7 +228,7 @@
 	</div>
 </section>
 
-<section class="s-plans">
+<section class="s-plans" id="s-plans">
 	<div class="container">
 			<div class="row">
 				<div class="col-12 text-center">
@@ -234,7 +236,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-3"><div class="s-plans-box">
+				<div class="col-md-3 col-sm-6"><div class="s-plans-box">
 					<h4>Basic</h4>
 					<span><sup>$</sup>20<sub>/m</sub></span>
 					<ul>
@@ -246,7 +248,7 @@
 					</ul>
 					<div class="button">Order Now</div>
 				</div></div>
-				<div class="col-md-3"><div class="s-plans-box">
+				<div class="col-md-3 col-sm-6"><div class="s-plans-box">
 					<h4>Premium</h4>
 					<span><sup>$</sup>40<sub>/m</sub></span>
 					<ul>
@@ -258,7 +260,7 @@
 					</ul>
 					<div class="button">Order Now</div>
 				</div></div>
-				<div class="col-md-3"><div class="s-plans-box">
+				<div class="col-md-3 col-sm-6"><div class="s-plans-box">
 					<h4>Business</h4>
 					<span><sup>$</sup>80<sub>/m</sub></span>
 					<ul>
@@ -270,7 +272,7 @@
 					</ul>
 					<div class="button">Order Now</div>
 				</div></div>
-				<div class="col-md-3"><div class="s-plans-box">
+				<div class="col-md-3 col-sm-6"><div class="s-plans-box">
 					<h4>Standard</h4>
 					<span><sup>$</sup>120<sub>/m</sub></span>
 					<ul>
@@ -285,7 +287,7 @@
 			</div>
 		</div>
 </section>
-<section class="s-say" style="background-image: url(img/bg-2.jpg);">
+<section class="s-say" id="s-say" style="background-image: url(img/bg-2.jpg);">
 	<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-12 text-center">
@@ -303,7 +305,7 @@
 			</div>
 			<!-- /.col-lg-8 -->
 			<div class="w-100"></div>
-			<div class="col-lg-auto">
+			<div class="col-lg-auto text-center">
 				<div class="button"><a href="#">Send Message</a></div>
 			</div>
 			<!-- /.col-lg-auto -->
@@ -315,14 +317,14 @@
 <footer>
 	<div class="container">
 			<div class="row justify-content-between">
-				<div class="col-lg-4">
+				<div class="col-lg-4 col-md-6 col-sm-12">
 					<h3>About Us</h3>
 					<p>Lorem ipsum dolor sit amet, consectetitecto beatae vitae dicta sunt explicabo. magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempuaerat voluptatem.</p>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-lg-3 col-md-6 col-sm-6">
 					<span>Quick Links</span>
-					<div class="row">
-						<div class="col">
+					<div class="row no-gutters">
+						<div class="col-6">
 							<ul>
 								<li>
 									<a href="#">Home</a>
@@ -333,7 +335,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="col">
+						<div class="col-6">
 							<ul>
 								<li>
 									<a href="#">Development</a>
@@ -345,7 +347,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-lg-4 col-md-12 col-sm-6">
 					<span>Find Us On</span>
 					<div class="fa">
 						<i class="fab fa-facebook-f"></i>
@@ -360,6 +362,7 @@
 			</div>
 		</div>
 </footer>
+<div id="toTop"> <p class="p">Top</p> </div>
 	<script src="js/scripts.min.js"></script>
 
 </body>

@@ -21,6 +21,11 @@
 	.s-works .button-works button 
 		margin-left: 10px
 		padding: 5px 5px 0
+	footer ul 
+		li 
+			overflow: hidden
+			a
+			padding-right: 50px
 //Small: ≥576px
 +media-breakpoint-down(sm)
 	.top_nav-menu ul 
@@ -47,11 +52,27 @@
 		margin: 0 auto $gutter
 		img
 			margin: 0 auto
-	
+	.s-plans-box span
+		max-width: 70%
+		margin: 0 auto
+	.s-plans-box ul
+		margin-top: 2%
+	.s-plans-box
+		border: 1px solid rgba($grey, 0.1)
+		&:hover
+			border: 1px solid rgba($accent, 0.1)
+	footer ul 
+		li
+			margin-left: 0
+			margin-right: 0
+			padding: 0
+			a
+				padding-right: 10px
+
 //Extra small: >0
 +media-breakpoint-down(xs)
-
-
+	footer ul li
+		display: inline-block
 /*==========  Mobile First  ==========*/
 
 //Extra small: <576px

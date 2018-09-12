@@ -2375,6 +2375,128 @@ h1, h2, h3, h4, h5 {
     .button:active::after {
       opacity: .32; }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0b0a0a;
+  z-index: 999; }
+  .preloader .round1, .preloader .round1::before, .preloader .round1::after {
+    content: '';
+    position: absolute;
+    border: 3px solid transparent;
+    -webkit-border-radius: 50%;
+            border-radius: 50%; }
+  .preloader .round1 {
+    margin: 200px auto;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border-top-color: #1dde85;
+    -webkit-animation: spiner 1s infinite linear;
+            animation: spiner 1s infinite linear; }
+    .preloader .round1::after {
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border-top-color: #fff;
+      -webkit-animation: spiner 2s infinite linear;
+              animation: spiner 2s infinite linear; }
+    .preloader .round1::before {
+      top: 23px;
+      left: 23px;
+      right: 23px;
+      bottom: 23px;
+      border-top-color: #ff1400;
+      -webkit-animation: spiner 3s infinite linear;
+              animation: spiner 3s infinite linear; }
+
+@-webkit-keyframes spiner {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes spiner {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+#toTop {
+  width: 80px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #1dde85;
+  -webkit-border-radius: 40px;
+          border-radius: 40px;
+  position: fixed;
+  bottom: 100px;
+  right: 15px;
+  cursor: pointer;
+  display: none;
+  color: #1dde85;
+  font-family: "roboto-example", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  -webkit-transition: background-color .2s ease;
+  -o-transition: background-color .2s ease;
+  transition: background-color .2s ease;
+  -webkit-transition: border .2s ease;
+  -o-transition: border .2s ease;
+  transition: border .2s ease; }
+  #toTop:hover {
+    background-color: #e6e6e6;
+    border: none;
+    -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+            transform: scale(0.9); }
+  #toTop:active {
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: -webkit-transform .5s ease;
+    -o-transition: transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease, -webkit-transform .5s ease; }
+  #toTop::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1dde85;
+    opacity: .25;
+    -webkit-border-radius: 40px;
+            border-radius: 40px; }
+  #toTop .p {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+
 .header {
   color: #fff;
   width: 100%;
@@ -2421,7 +2543,23 @@ h1, h2, h3, h4, h5 {
         .top_nav-menu ul li a {
           color: #fff;
           text-decoration: none;
-          text-transform: uppercase; }
+          text-transform: uppercase;
+          -webkit-transform: scale(1);
+              -ms-transform: scale(1);
+                  transform: scale(1);
+          -webkit-transition: -webkit-transform 1s ease;
+          transition: -webkit-transform 1s ease;
+          -o-transition: transform 1s ease;
+          transition: transform 1s ease;
+          transition: transform 1s ease, -webkit-transform 1s ease;
+          -webkit-transition: color 0.5s ease;
+          -o-transition: color 0.5s ease;
+          transition: color 0.5s ease; }
+          .top_nav-menu ul li a:hover {
+            color: #1dde85;
+            -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                    transform: scale(1.1); }
 
 .center {
   height: 100%;
@@ -2670,19 +2808,22 @@ input, textarea {
     color: #fff; }
     input::-webkit-input-placeholder textarea, textarea::-webkit-input-placeholder textarea {
       height: 250px;
-      padding-top: 15px; }
+      padding-top: 20px; }
     input::-moz-placeholder textarea, textarea::-moz-placeholder textarea {
       height: 250px;
-      padding-top: 15px; }
+      padding-top: 20px; }
     input:-ms-input-placeholder textarea, textarea:-ms-input-placeholder textarea {
       height: 250px;
-      padding-top: 15px; }
+      padding-top: 20px; }
     input::-ms-input-placeholder textarea, textarea::-ms-input-placeholder textarea {
       height: 250px;
-      padding-top: 15px; }
+      padding-top: 20px; }
     input::placeholder textarea, textarea::placeholder textarea {
       height: 250px;
-      padding-top: 15px; }
+      padding-top: 20px; }
+
+textarea {
+  min-height: 200px; }
 
 .s-plans-box:hover h4 {
   color: #1dde85;
@@ -2743,9 +2884,11 @@ footer {
     margin-top: 15px;
     list-style: none;
     padding: 0;
-    display: block; }
+    position: relative; }
     footer ul li {
-      margin-right: 5px; }
+      margin-right: 5px;
+      margin-left: 5px;
+      display: block; }
       footer ul li a {
         color: #fff;
         font-weight: 100;
@@ -2812,7 +2955,10 @@ footer {
     font-size: 30px; }
   .s-works .button-works button {
     margin-left: 10px;
-    padding: 5px 5px 0; } }
+    padding: 5px 5px 0; }
+  footer ul li {
+    overflow: hidden;
+    padding-right: 50px; } }
 
 @media (max-width: 767.98px) {
   .top_nav-menu ul li {
@@ -2838,6 +2984,25 @@ footer {
   .mix {
     margin: 0 auto 30px; }
     .mix img {
-      margin: 0 auto; } }
+      margin: 0 auto; }
+  .s-plans-box span {
+    max-width: 70%;
+    margin: 0 auto; }
+  .s-plans-box ul {
+    margin-top: 2%; }
+  .s-plans-box {
+    border: 1px solid rgba(69, 69, 70, 0.1); }
+    .s-plans-box:hover {
+      border: 1px solid rgba(29, 222, 133, 0.1); }
+  footer ul li {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0; }
+    footer ul li a {
+      padding-right: 10px; } }
+
+@media (max-width: 575.98px) {
+  footer ul li {
+    display: inline-block; } }
 
 /*==========  Mobile First  ==========*/

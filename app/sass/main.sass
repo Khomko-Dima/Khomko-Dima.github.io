@@ -76,6 +76,90 @@ h1, h2, h3, h4, h5
 		background-color: darken($accent, 5%)
 		&::after
 			opacity: .32
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background: $darc
+	z-index: 999
+	.round1, .round1::before, .round1::after
+		content: ''
+		position: absolute
+		border: 3px solid transparent
+		border-radius: 50%
+	.round1
+		margin: 200px auto
+		width: 150px
+		height: 150px
+		position: relative
+		border-top-color: $accent
+		animation: spiner 1s infinite linear
+		&::after
+			top: 10px
+			left: 10px
+			right: 10px
+			bottom: 10px
+			border-top-color: #fff
+			animation: spiner 2s infinite linear
+		&::before
+			top: 23px
+			left: 23px
+			right: 23px
+			bottom: 23px
+			border-top-color: #ff1400
+			animation: spiner 3s infinite linear
+@keyframes spiner 
+	from
+		transform: rotate(0deg)
+	to
+		transform: rotate(360deg)
+#toTop 
+	width: 80px
+	height: 40px
+	background: #fff
+	border: 1px solid $accent
+	border-radius: 40px
+	position: fixed
+	bottom: 100px
+	right: 15px
+	cursor: pointer
+	display: none
+	color: $accent
+	font-family: $default-font
+	font-weight: bold
+	font-size: 14px
+
+	transition: background-color .2s ease
+	transition: border .2s ease
+	&:hover
+		background-color: darken(#fff, 10%)
+		border: none
+		transform: scale(0.9)
+	&:active
+		transform: scale(1.2)
+		transition: transform .5s ease
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: $accent
+		opacity: .25
+		border-radius: 40px
+	.p
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		width: 100%
+		height: 100%
+		align-items: center
+		justify-content: center			
 // header
 .header
 	color: #fff
@@ -117,6 +201,12 @@ h1, h2, h3, h4, h5
 					color: #fff
 					text-decoration: none
 					text-transform: uppercase
+					transform: scale(1)
+					transition: transform 1s ease
+					transition: color 0.5s ease
+					&:hover
+						color: $accent
+						transform: scale(1.1)
 .center
 	height: 100%
 	display: flex
@@ -316,7 +406,9 @@ input, textarea
 		color: #fff
 		textarea
 			height: 250px
-			padding-top: 15px
+			padding-top: 20px
+textarea
+	min-height: 200px
 .s-plans-box		
 	&:hover
 		h4
@@ -367,9 +459,11 @@ footer
 		margin-top: 15px
 		list-style: none
 		padding: 0
-		display: block
+		position: relative
 		li 
 			margin-right: 5px
+			margin-left: 5px
+			display: block
 			a 
 				color: #fff
 				font-weight: 100
