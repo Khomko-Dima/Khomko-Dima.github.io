@@ -1,6 +1,7 @@
 @import "vars"
 @import "fonts"
 @import "libs"
+@import "custom-scripts"
 
 ::placeholder
 	color: #666
@@ -47,85 +48,7 @@ ul
 		&:hover
 			text-decoration: none
 			color: $accent	
-.preloader
-	position: fixed
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
-	background: $darc
-	z-index: 999
-	.round1, .round1::before, .round1::after
-		content: ''
-		position: absolute
-		border: 3px solid transparent
-		border-radius: 50%
-	.round1
-		margin: 200px auto
-		width: 150px
-		height: 150px
-		position: relative
-		border-top-color: $accent
-		animation: spiner 1s infinite linear
-		&::after
-			top: 10px
-			left: 10px
-			right: 10px
-			bottom: 10px
-			border-top-color: #fff
-			animation: spiner 2s infinite linear
-		&::before
-			top: 23px
-			left: 23px
-			right: 23px
-			bottom: 23px
-			border-top-color: #ff1400
-			animation: spiner 3s infinite linear
-@keyframes spiner 
-	from
-		transform: rotate(0deg)
-	to
-		transform: rotate(360deg)
-.button
-	display: inline-block
-	border: none
-	color: #fff
-	text-decoration: none
-	background-color: $accent
-	padding: 15px 45px
-	font-size: 13px
-	text-transform: uppercase
-	font-weight: 600
-	letter-spacing: 3px
-	border-radius: 2px
-	text-align: center
-	position: relative
-	outline: none
-	transition: background-color .1s ease
-	cursor: pointer
-	&::after
-		transition: background-color .2s ease
-		position: absolute
-		content: ''
-		height: 4px
-		bottom: 0
-		width: 100%
-		background-color: darken($accent, 50%)
-		opacity: .18
-		border-bottom-left-radius: 2px
-		border-bottom-right-radius: 2px
-		left: 0
-	&:focus, &:hover
-		text-decoration: none
-		color: #fff
-	&:hover
-		background-color: lighten($accent, 5%)
-		&::after
-			opacity: .22
-	&:active
-		background-color: darken($accent, 5%)
-		&::after
-			opacity: .32
+//site
 .header
 	color: #fff
 	width: 100%
@@ -184,6 +107,7 @@ ul
 					font-size: 18px
 					line-height: 18px
 					position: relative
+					text-transform: uppercase
 					color: #fff
 					text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65)
 					&::before
@@ -278,22 +202,67 @@ section
 	flex-direction: column
 	justify-content: space-between
 	align-items: center
-#aniimated-thumbnials
-	a 
-		max-height: 350px
-		width: auto
-.img-galery
-	height: 150px
-	width: auto
-	margin: 15px
-	transition: transform 0.15s ease 0s
-	overflow: hidden
-	transform: scale3d(1, 1, 1)
-	&:hover
-		transform: scale3d(1.1, 1.1, 1.1)
-.lg-outer #lg-share
-	display: none
+//kontact
+.kontakt
+	.button 
+		a
+			color: #fff
+			text-decoration: none
+	&-box
+		display: flex
+		justify-content: space-between
+		padding: 15px
+		a 
+			color: $grey
+			transition: 0.2s ease
+			text-decoration: none
+			&:hover
+				color: $accent
+			i 
+				margin-right: 10px
+input, textarea
+	position: relative
+	color: $darc
+	z-index: 2
+	margin-top: 15px
+	width: 100%
+	height: 70px
+	font-size: 15px
+	border: 1px solid rgba(#fff, 0.5)
+	padding-left: 10px
+	background-color: rgba(#fff, 0)
+	&::placeholder
+		color: $grey
+		textarea
+			height: 200px
+			padding-top: 20px
+textarea
+	min-height: 200px
+//footer
+footer
+	margin-top: 100px
+	width: 100%
+	background-color: #2b2a2a
+	padding: 50px 0
+	p 
+		color: #fff
+		font-size: 15px
+		margin: 0
+		a 
+			color: #fff
+			&:hover
+				color: $accent
+				text-decoration: none
+.footer-menu
+	font-size: 15px
+	a
+		text-transform: uppercase
+		color: #fff
+		padding: 5px 0
+		display: block
 
 
+
+	
 @import "media" // Always at the end
 

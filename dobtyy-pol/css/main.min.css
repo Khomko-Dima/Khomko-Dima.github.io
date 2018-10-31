@@ -1,3 +1,4 @@
+@import url(../libs/remodal/remodal.css);
 @font-face {
   font-family: "roboto-example";
   font-weight: normal;
@@ -2846,72 +2847,244 @@ html {
 .fotorama--fullscreen .fotorama__nav:after, .fotorama--fullscreen .fotorama__nav:before, .fotorama--fullscreen .fotorama__stage:after, .fotorama--fullscreen .fotorama__stage:before, .fotorama__wrap--fade .fotorama__stage:after, .fotorama__wrap--fade .fotorama__stage:before, .fotorama__wrap--no-shadows .fotorama__nav:after, .fotorama__wrap--no-shadows .fotorama__nav:before, .fotorama__wrap--no-shadows .fotorama__stage:after, .fotorama__wrap--no-shadows .fotorama__stage:before {
   display: none; }
 
-::-webkit-input-placeholder {
-  color: #666; }
+/*
+ *  Remodal - v1.1.1
+ *  Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+ *  http://vodkabears.github.io/remodal/
+ *
+ *  Made by Ilya Makarov
+ *  Under MIT License
+ */
+/* ==========================================================================
+   Remodal's default mobile first theme
+   ========================================================================== */
+/* Default theme styles for the background */
+.remodal-bg.remodal-is-opening,
+.remodal-bg.remodal-is-opened {
+  -webkit-filter: blur(3px);
+  filter: blur(3px); }
 
-::-moz-placeholder {
-  color: #666; }
+/* Default theme styles of the overlay */
+.remodal-overlay {
+  background: rgba(43, 46, 56, 0.9); }
 
-:-ms-input-placeholder {
-  color: #666; }
+.remodal-overlay.remodal-is-opening,
+.remodal-overlay.remodal-is-closing {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
 
-::-ms-input-placeholder {
-  color: #666; }
+.remodal-overlay.remodal-is-opening {
+  -webkit-animation-name: remodal-overlay-opening-keyframes;
+  animation-name: remodal-overlay-opening-keyframes; }
 
-::placeholder {
-  color: #666; }
+.remodal-overlay.remodal-is-closing {
+  -webkit-animation-name: remodal-overlay-closing-keyframes;
+  animation-name: remodal-overlay-closing-keyframes; }
 
-::-moz-selection {
-  background-color: #ff6b24;
-  color: #fff; }
+/* Default theme styles of the wrapper */
+.remodal-wrapper {
+  padding: 10px 10px 0; }
 
-::selection {
-  background-color: #ff6b24;
-  color: #fff; }
+/* Default theme styles of the modal dialog */
+.remodal {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 35px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  color: #2b2e38;
+  background: #fff; }
 
-html, body {
-  height: 100%; }
+.remodal.remodal-is-opening,
+.remodal.remodal-is-closing {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
 
-body {
-  font-size: 18px;
-  min-width: 320px;
-  position: relative;
-  line-height: 1.65;
-  font-family: "roboto-example", sans-serif;
-  overflow-x: hidden; }
-  body input, body textarea {
-    border: #666 1px solid;
-    outline: none; }
-    body input:focus:required:invalid, body textarea:focus:required:invalid {
-      border-color: red; }
-    body input:required:valid, body textarea:required:valid {
-      border-color: green; }
+.remodal.remodal-is-opening {
+  -webkit-animation-name: remodal-opening-keyframes;
+  animation-name: remodal-opening-keyframes; }
 
-.img-responsive {
+.remodal.remodal-is-closing {
+  -webkit-animation-name: remodal-closing-keyframes;
+  animation-name: remodal-closing-keyframes; }
+
+/* Vertical align of the modal dialog */
+.remodal,
+.remodal-wrapper:after {
+  vertical-align: middle; }
+
+/* Close button */
+.remodal-close {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
-  max-width: 100%;
-  height: auto; }
+  overflow: visible;
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+  text-decoration: none;
+  color: #95979c;
+  border: 0;
+  outline: 0;
+  background: transparent; }
 
-.text-center {
+.remodal-close:hover,
+.remodal-close:focus {
+  color: #2b2e38; }
+
+.remodal-close:before {
+  font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
+  font-size: 25px;
+  line-height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 35px;
+  content: "\00d7";
   text-align: center; }
 
-h1, h2, h3, h4, h5 {
-  line-height: 1.45;
-  font-weight: bold; }
+/* Dialog buttons */
+.remodal-confirm,
+.remodal-cancel {
+  font: inherit;
+  display: inline-block;
+  overflow: visible;
+  min-width: 110px;
+  margin: 0;
+  padding: 12px 0;
+  cursor: pointer;
+  -webkit-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  transition: background 0.2s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  border: 0;
+  outline: 0; }
 
-ul {
-  list-style: none;
+.remodal-confirm {
+  color: #fff;
+  background: #81c784; }
+
+.remodal-confirm:hover,
+.remodal-confirm:focus {
+  background: #66bb6a; }
+
+.remodal-cancel {
+  color: #fff;
+  background: #e57373; }
+
+.remodal-cancel:hover,
+.remodal-cancel:focus {
+  background: #ef5350; }
+
+/* Remove inner padding and border in Firefox 4+ for the button tag. */
+.remodal-confirm::-moz-focus-inner,
+.remodal-cancel::-moz-focus-inner,
+.remodal-close::-moz-focus-inner {
   padding: 0;
-  margin: 0; }
-  ul a {
-    text-decoration: none;
-    color: #0b0a0a;
-    -webkit-transition: 0.2s color;
-    -o-transition: 0.2s color;
-    transition: 0.2s color; }
-    ul a:hover {
-      text-decoration: none;
-      color: #ff6b24; }
+  border: 0; }
+
+/* Keyframes
+   ========================================================================== */
+@-webkit-keyframes remodal-opening-keyframes {
+  from {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0; }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+    -webkit-filter: blur(0);
+    filter: blur(0); } }
+
+@keyframes remodal-opening-keyframes {
+  from {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0; }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+    -webkit-filter: blur(0);
+    filter: blur(0); } }
+
+@-webkit-keyframes remodal-closing-keyframes {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0;
+    -webkit-filter: blur(0);
+    filter: blur(0); } }
+
+@keyframes remodal-closing-keyframes {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0;
+    -webkit-filter: blur(0);
+    filter: blur(0); } }
+
+@-webkit-keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+/* Media queries
+   ========================================================================== */
+@media only screen and (min-width: 641px) {
+  .remodal {
+    max-width: 80%; } }
+
+/* IE8
+   ========================================================================== */
+.lt-ie9 .remodal-overlay {
+  background: #2b2e38; }
+
+.lt-ie9 .remodal {
+  width: 700px; }
 
 .preloader {
   position: fixed;
@@ -3016,6 +3189,163 @@ ul {
     .button:active::after {
       opacity: .32; }
 
+#toTop {
+  width: 80px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #ff6b24;
+  -webkit-border-radius: 40px;
+          border-radius: 40px;
+  position: fixed;
+  bottom: 100px;
+  right: 15px;
+  cursor: pointer;
+  display: none;
+  color: #ff6b24;
+  font-family: "roboto-example", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  -webkit-transition: background-color .2s ease;
+  -o-transition: background-color .2s ease;
+  transition: background-color .2s ease;
+  -webkit-transition: border .2s ease;
+  -o-transition: border .2s ease;
+  transition: border .2s ease; }
+  #toTop:hover {
+    background-color: #e6e6e6;
+    border: none;
+    -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+            transform: scale(0.9); }
+  #toTop:active {
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: -webkit-transform .5s ease;
+    -o-transition: transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease, -webkit-transform .5s ease; }
+  #toTop::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff6b24;
+    opacity: .25;
+    -webkit-border-radius: 40px;
+            border-radius: 40px; }
+  #toTop .p {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+
+#aniimated-thumbnials a {
+  max-height: 350px;
+  width: auto; }
+
+.img-galery {
+  height: 100px;
+  width: auto;
+  margin: 5px;
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  transition: -webkit-transform 0.15s ease 0s;
+  -o-transition: transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s, -webkit-transform 0.15s ease 0s;
+  overflow: hidden;
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1); }
+  .img-galery:hover {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1); }
+
+.lg-outer #lg-share {
+  display: none; }
+
+.remodal p {
+  text-align: justify; }
+
+::-webkit-input-placeholder {
+  color: #666; }
+
+::-moz-placeholder {
+  color: #666; }
+
+:-ms-input-placeholder {
+  color: #666; }
+
+::-ms-input-placeholder {
+  color: #666; }
+
+::placeholder {
+  color: #666; }
+
+::-moz-selection {
+  background-color: #ff6b24;
+  color: #fff; }
+
+::selection {
+  background-color: #ff6b24;
+  color: #fff; }
+
+html, body {
+  height: 100%; }
+
+body {
+  font-size: 18px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  font-family: "roboto-example", sans-serif;
+  overflow-x: hidden; }
+  body input, body textarea {
+    border: #666 1px solid;
+    outline: none; }
+    body input:focus:required:invalid, body textarea:focus:required:invalid {
+      border-color: red; }
+    body input:required:valid, body textarea:required:valid {
+      border-color: green; }
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
+.text-center {
+  text-align: center; }
+
+h1, h2, h3, h4, h5 {
+  line-height: 1.45;
+  font-weight: bold; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  ul a {
+    text-decoration: none;
+    color: #0b0a0a;
+    -webkit-transition: 0.2s color;
+    -o-transition: 0.2s color;
+    transition: 0.2s color; }
+    ul a:hover {
+      text-decoration: none;
+      color: #ff6b24; }
+
 .header {
   color: #fff;
   width: 100%;
@@ -3090,6 +3420,7 @@ ul {
         font-size: 18px;
         line-height: 18px;
         position: relative;
+        text-transform: uppercase;
         color: #fff;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65); }
         .top-nav .menu ul li a::before {
@@ -3227,28 +3558,93 @@ section {
     margin-top: 15px;
     font-weight: bold; }
 
-#aniimated-thumbnials a {
-  max-height: 350px;
-  width: auto; }
+.kontakt .button a {
+  color: #fff;
+  text-decoration: none; }
 
-.img-galery {
-  height: 150px;
-  width: auto;
-  margin: 15px;
-  -webkit-transition: -webkit-transform 0.15s ease 0s;
-  transition: -webkit-transform 0.15s ease 0s;
-  -o-transition: transform 0.15s ease 0s;
-  transition: transform 0.15s ease 0s;
-  transition: transform 0.15s ease 0s, -webkit-transform 0.15s ease 0s;
-  overflow: hidden;
-  -webkit-transform: scale3d(1, 1, 1);
-          transform: scale3d(1, 1, 1); }
-  .img-galery:hover {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-            transform: scale3d(1.1, 1.1, 1.1); }
+.kontakt-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px; }
+  .kontakt-box a {
+    color: #454546;
+    -webkit-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    transition: 0.2s ease;
+    text-decoration: none; }
+    .kontakt-box a:hover {
+      color: #ff6b24; }
+    .kontakt-box a i {
+      margin-right: 10px; }
 
-.lg-outer #lg-share {
-  display: none; }
+input, textarea {
+  position: relative;
+  color: #0b0a0a;
+  z-index: 2;
+  margin-top: 15px;
+  width: 100%;
+  height: 70px;
+  font-size: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding-left: 10px;
+  background-color: rgba(255, 255, 255, 0); }
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #454546; }
+  input::-moz-placeholder, textarea::-moz-placeholder {
+    color: #454546; }
+  input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #454546; }
+  input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+    color: #454546; }
+  input::placeholder, textarea::placeholder {
+    color: #454546; }
+    input::-webkit-input-placeholder textarea, textarea::-webkit-input-placeholder textarea {
+      height: 200px;
+      padding-top: 20px; }
+    input::-moz-placeholder textarea, textarea::-moz-placeholder textarea {
+      height: 200px;
+      padding-top: 20px; }
+    input:-ms-input-placeholder textarea, textarea:-ms-input-placeholder textarea {
+      height: 200px;
+      padding-top: 20px; }
+    input::-ms-input-placeholder textarea, textarea::-ms-input-placeholder textarea {
+      height: 200px;
+      padding-top: 20px; }
+    input::placeholder textarea, textarea::placeholder textarea {
+      height: 200px;
+      padding-top: 20px; }
+
+textarea {
+  min-height: 200px; }
+
+footer {
+  margin-top: 100px;
+  width: 100%;
+  background-color: #2b2a2a;
+  padding: 50px 0; }
+  footer p {
+    color: #fff;
+    font-size: 15px;
+    margin: 0; }
+    footer p a {
+      color: #fff; }
+      footer p a:hover {
+        color: #ff6b24;
+        text-decoration: none; }
+
+.footer-menu {
+  font-size: 15px; }
+  .footer-menu a {
+    text-transform: uppercase;
+    color: #fff;
+    padding: 5px 0;
+    display: block; }
 
 /*==========  Desktop First  ==========*/
 /*==========  Mobile First  ==========*/
