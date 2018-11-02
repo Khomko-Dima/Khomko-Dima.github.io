@@ -80,7 +80,7 @@
 		&::after
 			opacity: .32
 #toTop 
-	width: 80px
+	width: 40px
 	height: 40px
 	background: #fff
 	border: 1px solid $accent
@@ -134,7 +134,36 @@
 		transform: scale3d(1.1, 1.1, 1.1)
 .lg-outer #lg-share
 	display: none
+
 .remodal
+	padding: 30px
+	h3
+		font-size: 40px
 	p
 		text-align: justify
-		
+.price
+	width: 100%
+	position: relative
+	display: flex
+	flex-direction: column
+	&-box
+		width: 100%
+		position: relative
+		display: flex
+		flex-direction: row
+		margin-top: 15px
+	&-img
+		img
+			border: 1px solid rgba($accent, 0.5)
+			border-radius: 5px
+	&-text
+		padding: 15px
+		margin-left: 15px
+
+.hamburger
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+		background-color: #fff
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after
+	background-color: #fff
+.hamburger-box
+	z-index: 2
