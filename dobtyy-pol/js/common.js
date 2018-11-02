@@ -1,5 +1,11 @@
 $(function() {
 
+    //проверка устройства
+    if ($("html").hasClass("desktop")) {
+        $(".viber-pk").css("display", "block");
+    } else {
+        $(".viber-mb").css("display", "block");
+    }
     //Выезжающее меню
     $('.openButton').click(function() {
         if(!$('.openButton').hasClass('openDone'))

@@ -5059,6 +5059,12 @@ footer {
     padding: 5px 0;
     display: block; }
 
+.viber-pk {
+  display: none; }
+
+.viber-mb {
+  display: none; }
+
 /*==========  Desktop First  ==========*/
 @media (max-width: 1025px) {
   .top-nav .logo {
