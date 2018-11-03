@@ -4807,22 +4807,6 @@ ul {
       text-decoration: none;
       color: #ff6b24; }
 
-button {
-  background: transparent;
-  border: transparent;
-  outline: none;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 24px;
-  color: #6c7d96;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: none; }
-
 .header {
   color: #fff;
   width: 100%;
