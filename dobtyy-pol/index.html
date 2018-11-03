@@ -146,8 +146,8 @@
 						</ul>
 					</p>
 					<div class="social">
-						<i class="fab fa-odnoklassniki"></i>
-						<i class="fab fa-instagram"></i>
+						<!-- <i class="fab fa-odnoklassniki"></i> -->
+						<!-- <i class="fab fa-instagram"></i> -->
 						<a class="viber-pk" title="Viber" href="viber://chat?number=+375336885077"><i class="fab fa-viber"></i></a>
 						<a class="viber-mb" title="Viber" href="viber://add?number=375336885077"><i class="fab fa-viber"></i></a>
 						<i class="far fa-envelope"></i>
@@ -200,16 +200,16 @@
 			<div class="row justify-content-center">
 				<div class="col-md-10">
 					<div class="section-galery fotorama" data-height="430" data-fit="cover" data-nav="thumbs" data-thumbwidth="140" data-thumbheight="80" data-loop="true" data-click="true">
-						<a href="../img/works/1.jpg"></a>
-						<a href="../img/works/2.jpg"></a>
-						<a href="../img/works/3.jpg"></a>
-						<a href="../img/works/4.jpg"></a>
-						<a href="../img/works/5.jpg"></a>
-						<a href="../img/works/6.jpg"></a>
-						<a href="../img/works/7.jpg"></a>
-						<a href="../img/works/8.jpg"></a>
-						<a href="../img/works/9.jpg"></a>
-						<a href="../img/works/10.jpg"></a>
+						<img src="img/works/1.jpg" alt="">
+						<img src="img/works/2.jpg" alt="">
+						<img src="img/works/3.jpg" alt="">
+						<img src="img/works/4.jpg" alt="">
+						<img src="img/works/5.jpg" alt="">
+						<img src="img/works/6.jpg" alt="">
+						<img src="img/works/7.jpg" alt="">
+						<img src="img/works/8.jpg" alt="">
+						<img src="img/works/9.jpg" alt="">
+						<img src="img/works/10.jpg" alt="">
 					</div>
 				</div>
 			</div>
@@ -221,10 +221,17 @@
 				<div class="col-12 text-center"><h2>свяжитесь со мной</h2></div>
 				<div class="col-md-6 col-sm-12">
 					<div class="mesej">
-						<input type="text" name="username" placeholder="Ваше Имя" required>
-						<input type="text" name="email" placeholder="Ваш Email" required>
-						<textarea name="meseng" id="" cols="30" rows="10" placeholder="Ваше сообщение..." required></textarea>
-						<div class="button"><a href="#">Отправить</a></div>
+						<!-- Hidden Required Fields -->
+						<form>
+							<input type="hidden" name="project_name" value="Добрый Пол">
+							<input type="hidden" name="admin_email" value="khomko-dima@mail.ru">
+							<input type="hidden" name="form_subject" value="Вопрос с сайта">
+							<!-- END Hidden Required Fields -->
+							<input type="text" name="username" placeholder="Ваше Имя" required>
+							<input type="text" name="email" placeholder="Ваш Email" required>
+							<textarea name="meseng" id="" cols="30" rows="10" placeholder="Ваше сообщение..." required></textarea>
+							<div class="button"><a href="#">Отправить</a></div>
+						</form>
 						<p style="margin-top: 10px">
 							Пoлучить кoнcультaцию a тaкжe зaкaзaть уcлугу Bы мoжeтe пoзвoнив пo тeлeфoну или написать на почту:
 						</p>

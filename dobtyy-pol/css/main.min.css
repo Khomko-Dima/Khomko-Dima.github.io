@@ -5009,6 +5009,12 @@ section {
         color: #ff6b24;
         background-color: #fff; }
 
+.viber-pk {
+  display: none; }
+
+.viber-mb {
+  display: none; }
+
 .works-box {
   border: 1px solid rgba(69, 69, 70, 0.3);
   -webkit-border-radius: 3%;
@@ -5128,12 +5134,6 @@ footer {
     padding: 5px 0;
     display: block; }
 
-.viber-pk {
-  display: none; }
-
-.viber-mb {
-  display: none; }
-
 /*==========  Desktop First  ==========*/
 @media (max-width: 1025px) {
   .top-nav .logo {
@@ -5207,7 +5207,7 @@ footer {
     right: -999px;
     top: 70px;
     width: 200px;
-    background-color: rgba(69, 69, 70, 0.5); }
+    background-color: rgba(69, 69, 70, 0.8); }
     .top-nav .menu-dop ul {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
