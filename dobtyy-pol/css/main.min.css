@@ -4807,6 +4807,22 @@ ul {
       text-decoration: none;
       color: #ff6b24; }
 
+button {
+  background: transparent;
+  border: transparent;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 24px;
+  color: #6c7d96;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none; }
+
 .header {
   color: #fff;
   width: 100%;
@@ -4964,34 +4980,33 @@ section {
       height: 90%;
       border: 1px solid #ff6b24; }
   .abaut .social {
-    width: 50%;
+    width: 100%;
     margin-top: 5%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    position: relative;
-    -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-            justify-content: space-around; }
-    .abaut .social i {
-      font-size: 30px;
-      color: #fff;
-      width: 48px;
-      height: 48px;
-      background-color: #ff6b24;
-      border: 1px solid #ff6b24;
-      -webkit-border-radius: 50%;
-              border-radius: 50%;
-      line-height: 49px;
-      cursor: pointer;
-      text-align: center;
-      -webkit-transition: 0.5s ease;
-      -o-transition: 0.5s ease;
-      transition: 0.5s ease; }
-      .abaut .social i:hover {
-        color: #ff6b24;
-        background-color: #fff; }
+    position: relative; }
+    .abaut .social a {
+      margin: 0 10px; }
+      .abaut .social a i {
+        font-size: 30px;
+        color: #fff;
+        width: 48px;
+        height: 48px;
+        background-color: #ff6b24;
+        border: 1px solid #ff6b24;
+        -webkit-border-radius: 50%;
+                border-radius: 50%;
+        line-height: 49px;
+        cursor: pointer;
+        text-align: center;
+        -webkit-transition: 0.5s ease;
+        -o-transition: 0.5s ease;
+        transition: 0.5s ease; }
+        .abaut .social a i:hover {
+          color: #ff6b24;
+          background-color: #fff; }
 
 .viber-pk {
   display: none; }
@@ -5039,6 +5054,11 @@ section {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -5049,7 +5069,8 @@ section {
     -webkit-transition: 0.2s ease;
     -o-transition: 0.2s ease;
     transition: 0.2s ease;
-    text-decoration: none; }
+    text-decoration: none;
+    margin: 5px 0; }
     .kontakt-box a:hover {
       color: #ff6b24; }
     .kontakt-box a i {
