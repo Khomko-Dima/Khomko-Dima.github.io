@@ -415,6 +415,41 @@ input, textarea
 			padding-top: 20px
 textarea
 	min-height: 200px
+.partners
+	&-galery
+		width: 95%
+		margin: auto	
+	.partner
+		height: 100%
+		display: flex
+		margin: auto
+		padding: 
+			left: 15px
+			right: 15px
+	.owl-stage
+		display: flex
+		.owl-item
+			img
+				max-width: 100%
+				width: auto
+				display: inline-block
+				margin: auto
+.owl-nav
+	position: absolute
+	top: 0
+	width: 100%
+	z-index: 2
+	> button
+		position: absolute
+		top: 95px
+		outline: none
+		i
+			color: #999
+			font-size: 30px
+		&.owl-prev
+			left: -20px
+		&.owl-next
+			right: -20px	
 // footer
 footer
 	background-color: $darc		
