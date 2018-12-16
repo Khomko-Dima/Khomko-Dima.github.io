@@ -75,6 +75,7 @@ ul
 	&-phone
 		position: relative
 		display: none
+		width: 150px
 		&::after
 			content: '\f095'
 			position: absolute
@@ -82,9 +83,10 @@ ul
 			font-family: "Font Awesome 5 Free"; font-weight: 900
 			top: 15px
 			left: -30px
+		a 	
+			width: 150px
 	&-price	
 		display: none
-
 .scrol
 	height: 50px
 	background-color: rgba($black, 0.6)
@@ -119,13 +121,13 @@ nav.top_nav-menu
 	background-color: #111
 	color: #fff
 	p 
-  		margin-top: 30px
-  		font-size: 20px
-  		text-align: center
-  		span 
-  			color: $accent
-  			text-transform: uppercase
-  			font-family: $pacifico
+		margin-top: 30px
+		font-size: 20px
+		text-align: center
+		span 
+			color: $accent
+			text-transform: uppercase
+			font-family: $pacifico
 	ul
 		margin-top: 20px
 		li 
@@ -141,8 +143,10 @@ nav.top_nav-menu
 				&:hover
 					color: $accent
 					padding-left: 50px
-
-
+.close_menu
+	display: none
+	justify-content: center
+//header
 .header
 	color: #fff
 	width: 100%

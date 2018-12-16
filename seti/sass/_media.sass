@@ -15,7 +15,7 @@
 	.slogan .box p
 		font-size: 14px
 	.scrol
-		height: 100px
+		height: 75px
 	.scrol
 		flex-wrap: wrap	
 	.top_nav
@@ -26,6 +26,7 @@
 			width: 50%
 			text-align: center
 			top: -20px
+			display: flex
 			&::after
 				display: none
 		&-price
@@ -37,6 +38,8 @@
 			order: 2
 //Small: ≥576px
 +media-breakpoint-down(sm)
+	.scrol
+		height: 100px
 	.top_nav-logo 
 		font-size: 30px
 	.slogan .center-slogan h1
@@ -52,15 +55,25 @@
 
 //Extra small: >0
 +media-breakpoint-down(xs)
-	.top_nav
-		&-logo
-			order: 1
-		&-phone
-			order: 2
-		&-price
-			order: 2
-		.hamburger
-			order: 1
+	nav.top_nav-menu
+		ul
+			margin-top: 20px
+			text-align-last: right
+			li 
+				border-bottom: 1px solid #666
+				width: 100%
+				a
+					color: #fff
+					padding-right: 35px
+					padding-top: 15px
+					padding-bottom: 15px
+					display: block
+					transition: 0.5s all
+					&:hover
+						color: $accent
+						padding-right: 50px
+	.close_menu
+		display: flex
 	.scrol .top_nav-logo
 		font-size: 18px
 	.scrol .top_nav-price a, .scrol .top_nav-phone a
@@ -77,9 +90,15 @@
 		line-height: 30px
 	.top_nav-logo 
 		font-size: 20px
-	footer ul li
-		display: inline-block
-
+@media (max-width: 352px)
+	.scrol .top_nav-logo
+		font-size: 15px
+	nav.top_nav-menu p
+		text-align: right
+		padding-right: 10px
+	.close_menu
+		justify-content: flex-end
+		padding-right: 15px
 /*==========  Mobile First  ==========*/
 
 //Extra small: <576px
