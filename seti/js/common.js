@@ -1,28 +1,24 @@
 $(function() {
 
-      $("#my-menu").mmenu({
-        extensions: [ 'widescreen', 'theme-black', 'fx-listitems-slide', 'position-right' ],
-        navbar: {
-            title: '<p><span>Электромонтаж</span> Гродно</p>'
-        },
-        onClick: {
-            close: true,
-            preventDefault: false,
-        },
-      });
+     $('a.hamburger').click(function() {
+        if ($('a.hamburger').hasClass('menu-close')) {
+            $('a.hamburger').removeClass('menu-close');
+            $('.top_nav-menu').animate({right: '0px'}, 200);
+            $('.hamburger').addClass('is-active');
+            $('body').animate({right: '400px'}, 200);
+            $('.top_nav').animate({left: '-400px'}, 200); 
+        } else {
+            $('.top_nav-menu').animate({right: '-400px'}, 200);
+            $('.hamburger').removeClass('is-active');
+            $('a.hamburger').addClass('menu-close');
+            $('body').animate({right: '0px'}, 200);
+            $('.top_nav').animate({left: '0'}, 200);
+            }
+        });
 
-    var api1 = $('#my-menu').data('mmenu');
-    api1.bind('open:finish', function() {
-        $('.hamburger').addClass('is-active');
-    }).bind('close:finish', function() {
-        $('.hamburger').removeClass('is-active');
-    });
-    // $('.mm-listitem__text').click(function() {
-    //     $('.hamburger').removeClass('is-active');
-    //     $('#my-menu').removeClass('mm-menu_opened');
-    // });
 
-    $('.partners-galery').owlCarousel({
+
+     $('.partners-galery').owlCarousel({
         loop: true,
         smartSpeed: 700,
         dots: false,
@@ -31,7 +27,7 @@ $(function() {
         responsiveClass: true,
         responsive:{
         0:{
-            items:1
+            items:2
         },
         500:{
             items:2
@@ -47,6 +43,17 @@ $(function() {
         }
         }
     });
+
+
+
+     $(window).scroll(function() {
+        if ($(this).scrollTop() > 100){
+        $('.top_nav').addClass("scrol");
+        }
+        else{
+        $('.top_nav').removeClass("scrol");
+        }
+        });
 
 	$(document.body).ready(function() {
 		$(".preloader").fadeOut("slow");

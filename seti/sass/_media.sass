@@ -6,75 +6,80 @@
 
 //Extra large: ≥1200px
 +media-breakpoint-down(xl)
-	.top_nav-menu
-		margin-right: 0
+
 //Large: ≥992px
 +media-breakpoint-down(lg)
-	.top_nav-menu ul
-		padding-left: 0
+
 //Medium: ≥768px
 +media-breakpoint-down(md)
-	.center
-		&-slogan
-			h1
-				font-size: 30px
-	.s-works .button-works button 
-		margin-left: 10px
-		padding: 5px 5px 0
-	footer ul 
-		li 
-			overflow: hidden
-			a
-			padding-right: 50px
+	.slogan .box p
+		font-size: 14px
+	.scrol
+		height: 100px
+	.scrol
+		flex-wrap: wrap	
+	.top_nav
+		&-logo
+			order: 1
+		&-phone
+			order: 3
+			width: 50%
+			text-align: center
+			top: -20px
+			&::after
+				display: none
+		&-price
+			order: 3
+			width: 50%
+			text-align: center
+			top: -20px
+		.hamburger
+			order: 2
 //Small: ≥576px
 +media-breakpoint-down(sm)
-	.top_nav-menu ul 
-		li
-			flex-wrap: wrap
-			a
-				padding-left: 10px
-				padding-right: 10px
-	.s-welcome
-		h2
-			font-size: 25px
-		p 
-			font-size: 14px
-	section 
-		margin-top: 50px
-	.team
-		margin: auto
-		margin-bottom: $gutter
-	.servise-box
-		max-width: 360px
-		margin: auto
-		margin-bottom: $gutter
-	.mix
-		margin: 0 auto $gutter
-		img
-			margin: 0 auto
-	.s-plans-box span
-		max-width: 70%
-		margin: 0 auto
-	.s-plans-box ul
-		margin-top: 2%
-	.s-plans-box
-		border: 1px solid rgba($grey, 0.1)
-		&:hover
-			border: 1px solid rgba($accent, 0.1)
-	footer ul 
-		li
-			margin-left: 0
-			margin-right: 0
-			padding: 0
-			a
-				padding-right: 10px
+	.top_nav-logo 
+		font-size: 30px
+	.slogan .center-slogan h1
+		font-size: 40px
+		span 
+			font-size: 40px
+	a.box-button
+		display: none
+	.slogan
+		margin-top: 18%
+	.box_wb
+		margin: 15px auto
 
 //Extra small: >0
 +media-breakpoint-down(xs)
+	.top_nav
+		&-logo
+			order: 1
+		&-phone
+			order: 2
+		&-price
+			order: 2
+		.hamburger
+			order: 1
+	.scrol .top_nav-logo
+		font-size: 18px
+	.scrol .top_nav-price a, .scrol .top_nav-phone a
+		font-size: 15px
+		line-height: 15px
+	.slogan .center-slogan h1
+		font-size: 30px
+		span 
+			font-size: 30px
+	.slogan
+		margin-top: 38%
+	.slogan .center-slogan h2
+		font-size: 16px
+		line-height: 30px
+	.top_nav-logo 
+		font-size: 20px
 	footer ul li
 		display: inline-block
-	#toTop
-		opacity: 0	
+
 /*==========  Mobile First  ==========*/
 
 //Extra small: <576px

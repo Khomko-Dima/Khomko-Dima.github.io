@@ -1,6 +1,7 @@
 @import "vars"
 @import "fonts"
 @import "libs"
+@import "custom-scripts"
 
 ::placeholder
 	color: #666
@@ -10,7 +11,7 @@
 	color: #fff
 
 html, body
-	height: 100%
+	// height: 100%
 
 body
 	font-size: 18px
@@ -19,6 +20,8 @@ body
 	line-height: 1.65
 	font-family: $default-font
 	overflow-x: hidden
+	margin: 0
+	right: 0
 	input, textarea
 			border: #666 1px solid
 			outline: none
@@ -31,8 +34,6 @@ body
 	display: block
 	max-width: 100%
 	height: auto
-.text-center
-	text-align: center
 h1, h2, h3, h4, h5
 	line-height: 1.45
 	font-weight: bold
@@ -42,150 +43,26 @@ ul
 	margin: 0
 	a 
 		text-decoration: none
-		color: $darc
-		transition: 0.2s color
 		&:hover
 			text-decoration: none
-			color: $accent	
-.button
-	display: inline-block
-	border: none
-	color: #fff
-	text-decoration: none
-	background-color: $accent
-	padding: 15px 45px
-	font-size: 13px
-	text-transform: uppercase
-	font-weight: 600
-	letter-spacing: 3px
-	border-radius: 2px
+.text-center
 	text-align: center
-	position: relative
-	outline: none
-	transition: background-color .1s ease
-	cursor: pointer
-	&::after
-		transition: background-color .2s ease
-		position: absolute
-		content: ''
-		height: 4px
-		bottom: 0
-		width: 100%
-		background-color: darken($accent, 50%)
-		opacity: .18
-		border-bottom-left-radius: 2px
-		border-bottom-right-radius: 2px
-		left: 0
-	&:focus, &:hover
-		text-decoration: none
-		color: #fff
-	&:hover
-		background-color: lighten($accent, 5%)
-		&::after
-			opacity: .22
-	&:active
-		background-color: darken($accent, 5%)
-		&::after
-			opacity: .32
-.preloader
+.top_nav
+	border-bottom: 1px solid $grey
 	position: fixed
+	z-index: 999
 	top: 0
 	left: 0
 	width: 100%
-	height: 100%
-	background: $darc
-	z-index: 999
-	.round1, .round1::before, .round1::after
-		content: ''
-		position: absolute
-		border: 3px solid transparent
-		border-radius: 50%
-	.round1
-		margin: 200px auto
-		width: 150px
-		height: 150px
-		position: relative
-		border-top-color: $accent
-		animation: spiner 1s infinite linear
-		&::after
-			top: 10px
-			left: 10px
-			right: 10px
-			bottom: 10px
-			border-top-color: #fff
-			animation: spiner 2s infinite linear
-		&::before
-			top: 23px
-			left: 23px
-			right: 23px
-			bottom: 23px
-			border-top-color: #ff1400
-			animation: spiner 3s infinite linear
-@keyframes spiner 
-	from
-		transform: rotate(0deg)
-	to
-		transform: rotate(360deg)
-.hamburger
-	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
-		background-color: #fff
-.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after
-	background-color: #fff
-.mm-navbar .mm-navbar__title
-	p 
-		font-size: 20px
-		color: #fff
-		span 
-			font-family: $pacifico
-			text-transform: uppercase
-			color: $accent
-.mm-listitem_selected > .mm-listitem__text
-	background-color: transparent
-.mm-listitem a, .mm-listitem 
-	padding-left: 35px
-	transition: 0.5s all
-	a:hover
-		color: $accent
-		padding-left: 50px
-.mm-panels > .mm-panel > .mm-listview:first-child, .mm-panels > .mm-panel > .mm-navbar + .mm-listview
-	margin-top: 15px
-.mm-listitem:after
-	left: 0
-.mm-navbar
-	border-bottom: none
-.mm-navbar__title
-	padding-top: 20px
-// header
-.header
-	color: #fff
-	width: 100%
-	height: 100vh
-	background-size: cover
-	background-position: center
-	background-color: $darc
-	position: relative
-	overflow: hidden
-	&:before
-		content: ''
-		position: absolute
-		width: 100%
-		height: 100%
-		background-color: rgba($black, 0.8)
-	&-content
-		width: 100%
-		height: 100vh
-		position: relative
-		background-color: rgba(#eeebe5, 0.2)
-.top_nav
-	padding-top: 20px
-	padding-bottom: 20px
-	border-bottom: 1px solid $grey
-	position: relative
+	height: 100px
 	display: flex
 	justify-content: space-between
 	align-items: center
+	align-items: center
+	color: #fff
 	&-logo
 		font-size: 40px
+		display: block
 		margin-left: 2%
 		line-height: 40px
 		p 
@@ -195,21 +72,109 @@ ul
 			font-family: $pacifico
 			text-transform: uppercase
 			color: $accent
+	&-phone
+		position: relative
+		display: none
+		&::after
+			content: '\f095'
+			position: absolute
+			color: $accent
+			font-family: "Font Awesome 5 Free"; font-weight: 900
+			top: 15px
+			left: -30px
+	&-price	
+		display: none
+
+.scrol
+	height: 50px
+	background-color: rgba($black, 0.6)
+	box-shadow: 0 0 10px rgba(0,0,0,0.8)
+	overflow: hidden
+	.top_nav-logo
+		font-size: 30px
+		line-height: 30px
+	.top_nav-price,
+	.top_nav-phone
+		display: block
+		position: relative
+		a 
+			text-decoration: none
+			color: $accent
+			display: inline-block
+			transition: 0.5s ease all
+			line-height: 18px
+			&:hover
+				text-decoration: none
+				color: lighten($accent, 15%)
+				transform: scale(0.9)
+		
+nav.top_nav-menu
+	right: -400px
+	top: 0
+	height: 100%
+	position: fixed
+	display: block
+	width: 400px
+	z-index: 999
+	background-color: #111
+	color: #fff
+	p 
+  		margin-top: 30px
+  		font-size: 20px
+  		text-align: center
+  		span 
+  			color: $accent
+  			text-transform: uppercase
+  			font-family: $pacifico
+	ul
+		margin-top: 20px
+		li 
+			border-bottom: 1px solid #666
+			width: 100%
+			a
+				color: #fff
+				padding-left: 35px
+				padding-top: 15px
+				padding-bottom: 15px
+				display: block
+				transition: 0.5s all
+				&:hover
+					color: $accent
+					padding-left: 50px
+
+
+.header
+	color: #fff
+	width: 100%
+	height: 100vh
+	background-size: cover
+	background-position: center
+	background-color: $darc
+	position: relative
+	overflow: hidden
+	z-index: 1
+	&:before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		background-color: rgba($black, 0.8)
 .slogan
+	position: relative
 	width: 100%
 	height: 100%
-	position: relative
-	display: flex
-	margin-top: 10%
+	margin-top: 14%
 	.center-slogan
 		h1 
 			font-size: 48px
 			font-family: $exo-font
 			font-weight: 300
 			letter-spacing: 6px
-		p 
+		h2 
 			font-size: 18px
 			line-height: 36px
+			font-weight: 400
+			font-family: $default-font
 	span
 		color: $accent
 		font-family: $exo-font
@@ -233,7 +198,6 @@ ul
 			font-size: 18px
 			text-transform: uppercase
 			transition: 0.3s font-size ease
-
 .icon-head
 	position: relative
 	width: 100%
@@ -271,10 +235,9 @@ a.box-button
 			font-size: 20px
 		.icon-head-icon i 
 			transform: scale(1.3)
-//section
 section
 	margin-top: 130px
-	h2
+	h3
 		font-size: 30px
 		font-weight: bold
 		color: $grey
@@ -283,12 +246,13 @@ section
 			text-transform: uppercase
 	p 
 		font-size: 18px
-		font-weight: 100
+		font-weight: 100		
+
 .works
 	&-box
 		margin-top: 30px
-		min-width: 300px
-		min-height: 300px
+		width: 100%
+		height: 100%
 		background-size: cover
 		background-position: center
 		background-color: $darc
@@ -302,7 +266,7 @@ section
 			height: 100%
 			width: 100%
 			background-color: rgba($darc, 0.6)
-		h3 
+		h4
 			font-size: 30px
 			position: relative
 			margin-top: 15%
@@ -316,10 +280,14 @@ section
 			span 
 				font-size: 22px
 				line-height: 30px
+.box_wb
+	width: 300px
+	height: 300px
+	margin-top: 30px
 .wb3, .wb4 
-	h3
+	h4
 		margin-top: 12%
-.wb6 h3
+.wb6 h4
 	margin-top: 8%
 .works-box-button
 	font-size: 24px
@@ -349,13 +317,13 @@ section
 		&::before
 			color: $accent
 			transform: scale(1.2)
-// galery
 .us-works-nav, .fotorama
 	margin-top: 50px
 .us-works-nav
 	padding: 5px
-	h3
+	h4
 		text-transform: uppercase
+		font-size: 1.17em
 	a 
 		color: $grey
 		padding: 0 10px
@@ -364,6 +332,7 @@ section
 		display: block
 		&:hover
 			padding: 0 25px
+			color: $accent
 .fotorama__nav--thumbs .fotorama__nav__frame
 	margin: 5px 15px 0
 .fotorama__thumb-border
@@ -371,50 +340,6 @@ section
 	top: 5px
 	left: 15px
 	background-image: none
-// contact-us
-.contact-us
-	width: 100%
-	background-size: cover
-	background-position: center
-	background-color: $darc
-	position: relative
-	overflow: hidden
-	&:before
-		content: ''
-		position: absolute
-		width: 100%
-		height: 100%
-		background-color: rgba($black, 0.8)
-	.button 
-		margin-top: 20px
-		margin-bottom: 20px
-		text-transform: none
-		font-size: 18px
-		padding: 20px 50px
-		a 
-			text-decoration: none
-			color: #fff
-	h2 
-		color: #fff
-		margin-top: 50px
-input, textarea
-	position: relative
-	color: #fff
-	z-index: 2
-	margin-top: 15px
-	width: 100%
-	height: 70px
-	font-size: 15px
-	border: 1px solid rgba(#fff, 0.5)
-	padding-left: 10px
-	background-color: rgba(#fff, 0)
-	&::placeholder
-		color: #fff
-		textarea
-			height: 250px
-			padding-top: 20px
-textarea
-	min-height: 200px
 .partners
 	&-galery
 		width: 95%
@@ -449,8 +374,23 @@ textarea
 		&.owl-prev
 			left: -20px
 		&.owl-next
-			right: -20px	
-// footer
+			right: -20px
+.contact-us
+	width: 100%
+	background-size: cover
+	background-position: center
+	background-color: $darc
+	position: relative
+	overflow: hidden
+	&:before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		background-color: rgba($black, 0.8)
+	h3 
+		color: #fff
+		margin-top: 50px
 footer
 	background-color: $darc		
 	color: #fff
@@ -500,6 +440,7 @@ footer
 		a 
 			text-decoration: none
 			color: #fff
+
 
 @import "media" // Always at the end
 
