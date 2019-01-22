@@ -47,6 +47,9 @@ ul
 			text-decoration: none
 .text-center
 	text-align: center
+.accent
+	color: $accent
+// стили
 .top_nav
 	border-bottom: 1px solid $grey
 	position: fixed
@@ -71,18 +74,10 @@ ul
 		span
 			font-family: $pacifico
 			text-transform: uppercase
-			color: $accent
 	&-phone
 		position: relative
 		display: none
 		width: 150px
-		&::after
-			content: '\f095'
-			position: absolute
-			color: $accent
-			font-family: "Font Awesome 5 Free"; font-weight: 900
-			top: 15px
-			left: -30px
 		a 	
 			width: 150px
 	&-price	
@@ -109,7 +104,8 @@ ul
 				text-decoration: none
 				color: lighten($accent, 15%)
 				transform: scale(0.9)
-		
+
+// menu
 nav.top_nav-menu
 	right: -400px
 	top: 0
@@ -125,7 +121,6 @@ nav.top_nav-menu
 		font-size: 20px
 		text-align: center
 		span 
-			color: $accent
 			text-transform: uppercase
 			font-family: $pacifico
 	ul
@@ -146,6 +141,7 @@ nav.top_nav-menu
 .close_menu
 	display: none
 	justify-content: center
+
 //header
 .header
 	color: #fff
@@ -163,6 +159,7 @@ nav.top_nav-menu
 		width: 100%
 		height: 100%
 		background-color: rgba($black, 0.8)
+
 .slogan
 	position: relative
 	width: 100%
@@ -180,7 +177,6 @@ nav.top_nav-menu
 			font-weight: 400
 			font-family: $default-font
 	span
-		color: $accent
 		font-family: $exo-font
 		font-weight: 900
 		text-transform: uppercase
@@ -202,6 +198,7 @@ nav.top_nav-menu
 			font-size: 18px
 			text-transform: uppercase
 			transition: 0.3s font-size ease
+
 .icon-head
 	position: relative
 	width: 100%
@@ -222,7 +219,7 @@ nav.top_nav-menu
 			height: 1px
 			width: 40%
 			background-color: #fff 
-		i 
+		svg 
 			font-size: 25px
 			position: relative
 			margin: 0 auto
@@ -239,6 +236,7 @@ a.box-button
 			font-size: 20px
 		.icon-head-icon i 
 			transform: scale(1.3)
+
 section
 	margin-top: 130px
 	h3
@@ -246,11 +244,10 @@ section
 		font-weight: bold
 		color: $grey
 		span
-			color: $accent
 			text-transform: uppercase
 	p 
 		font-size: 18px
-		font-weight: 100		
+		font-weight: 100
 
 .works
 	&-box
@@ -305,15 +302,6 @@ section
 	padding: 10px 40px
 	border-radius: 5px
 	transition: 0.5s all ease
-	&::before
-		content: '\f061'
-		position: absolute
-		top: 10px
-		left: 257px
-		color: #fff
-		font-family: fontawesome
-		transition: 0.5s all ease
-		transform: scale(1)
 	&:hover
 		border: 1px solid $accent
 		text-decoration: none
@@ -321,6 +309,7 @@ section
 		&::before
 			color: $accent
 			transform: scale(1.2)
+//galery, us-works
 .us-works-nav, .fotorama
 	margin-top: 50px
 .us-works-nav
@@ -344,10 +333,13 @@ section
 	top: 5px
 	left: 15px
 	background-image: none
+
+//partners
 .partners
 	&-galery
 		width: 95%
-		margin: auto	
+		margin: auto
+		height: 252px	
 	.partner
 		height: 100%
 		display: flex
@@ -372,13 +364,15 @@ section
 		position: absolute
 		top: 95px
 		outline: none
-		i
+		svg
 			color: #999
 			font-size: 30px
 		&.owl-prev
 			left: -20px
 		&.owl-next
 			right: -20px
+
+//contant
 .contact-us
 	width: 100%
 	background-size: cover
@@ -395,6 +389,7 @@ section
 	h3 
 		color: #fff
 		margin-top: 50px
+
 footer
 	background-color: $darc		
 	color: #fff
@@ -445,6 +440,30 @@ footer
 			text-decoration: none
 			color: #fff
 
+.header-vid
+	height: 50vh
+.slogan-vid
+	margin-top: 14%
+
+.description-vid
+	img 
+		width: 100%
+		height: 366px
+	p 
+		font-weight: 400
+		text-align: justify
+.us-works-nav-vid
+	margin-top: 0
+	padding: 0
+	font-size: 16px
+	text-align: right
+	li 
+		margin: 8px
+		margin-right: 0
+		a 
+			padding: 0
+			&:hover
+				padding: 0 10px		
 
 @import "media" // Always at the end
 

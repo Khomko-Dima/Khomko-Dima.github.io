@@ -4733,7 +4733,7 @@ html.remodal-is-locked {
     width: 150px;
     height: 150px;
     position: relative;
-    border-top-color: #1dde85;
+    border-top-color: #F7CA18;
     -webkit-animation: spiner 1s infinite linear;
             animation: spiner 1s infinite linear; }
     .preloader .round1::after {
@@ -4782,7 +4782,7 @@ html.remodal-is-locked {
   border: none;
   color: #fff;
   text-decoration: none;
-  background-color: #1dde85;
+  background-color: #F7CA18;
   padding: 15px 45px;
   font-size: 13px;
   text-transform: uppercase;
@@ -4806,7 +4806,7 @@ html.remodal-is-locked {
     height: 4px;
     bottom: 0;
     width: 100%;
-    background-color: black;
+    background-color: #0f0c01;
     opacity: .18;
     -webkit-border-bottom-left-radius: 2px;
             border-bottom-left-radius: 2px;
@@ -4817,11 +4817,11 @@ html.remodal-is-locked {
     text-decoration: none;
     color: #fff; }
   .button:hover {
-    background-color: #30e491; }
+    background-color: #f8d031; }
     .button:hover::after {
       opacity: .22; }
   .button:active {
-    background-color: #1ac777; }
+    background-color: #edbf08; }
     .button:active::after {
       opacity: .32; }
 
@@ -4848,7 +4848,7 @@ html.remodal-is-locked {
   .price h4 {
     text-transform: uppercase;
     width: 100%;
-    background-color: #1dde85;
+    background-color: #F7CA18;
     color: #fff;
     padding: 15px 0;
     font-size: 30px;
@@ -4910,11 +4910,11 @@ html.remodal-is-locked {
   color: #666; }
 
 ::-moz-selection {
-  background-color: #1dde85;
+  background-color: #F7CA18;
   color: #fff; }
 
 ::selection {
-  background-color: #1dde85;
+  background-color: #F7CA18;
   color: #fff; }
 
 body {
@@ -4955,6 +4955,9 @@ ul {
 .text-center {
   text-align: center; }
 
+.accent {
+  color: #F7CA18; }
+
 .top_nav {
   border-bottom: 1px solid #454546;
   position: fixed;
@@ -4987,20 +4990,11 @@ ul {
       margin: 0; }
     .top_nav-logo span {
       font-family: "pacifico", sans-serif;
-      text-transform: uppercase;
-      color: #1dde85; }
+      text-transform: uppercase; }
   .top_nav-phone {
     position: relative;
     display: none;
     width: 150px; }
-    .top_nav-phone::after {
-      content: '\f095';
-      position: absolute;
-      color: #1dde85;
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      top: 15px;
-      left: -30px; }
     .top_nav-phone a {
       width: 150px; }
   .top_nav-price {
@@ -5022,7 +5016,7 @@ ul {
     .scrol .top_nav-price a,
     .scrol .top_nav-phone a {
       text-decoration: none;
-      color: #1dde85;
+      color: #F7CA18;
       display: inline-block;
       -webkit-transition: 0.5s ease all;
       -o-transition: 0.5s ease all;
@@ -5031,7 +5025,7 @@ ul {
       .scrol .top_nav-price a:hover,
       .scrol .top_nav-phone a:hover {
         text-decoration: none;
-        color: #5eeaa9;
+        color: #fadb62;
         -webkit-transform: scale(0.9);
             -ms-transform: scale(0.9);
                 transform: scale(0.9); }
@@ -5051,7 +5045,6 @@ nav.top_nav-menu {
     font-size: 20px;
     text-align: center; }
     nav.top_nav-menu p span {
-      color: #1dde85;
       text-transform: uppercase;
       font-family: "pacifico", sans-serif; }
   nav.top_nav-menu ul {
@@ -5069,7 +5062,7 @@ nav.top_nav-menu {
         -o-transition: 0.5s all;
         transition: 0.5s all; }
         nav.top_nav-menu ul li a:hover {
-          color: #1dde85;
+          color: #F7CA18;
           padding-left: 50px; }
 
 .close_menu {
@@ -5113,7 +5106,6 @@ nav.top_nav-menu {
     font-weight: 400;
     font-family: "roboto-example", sans-serif; }
   .slogan span {
-    color: #1dde85;
     font-family: "exo", sans-serif;
     font-weight: 900;
     text-transform: uppercase;
@@ -5165,7 +5157,7 @@ nav.top_nav-menu {
     height: 1px;
     width: 40%;
     background-color: #fff; }
-  .icon-head-icon i {
+  .icon-head-icon svg {
     font-size: 25px;
     position: relative;
     margin: 0 auto;
@@ -5183,7 +5175,7 @@ a.box-button {
   -o-transition: 0.5s all;
   transition: 0.5s all; }
   a.box-button:hover {
-    color: #1dde85;
+    color: #F7CA18;
     text-decoration: none; }
     a.box-button:hover .box p {
       font-size: 20px; }
@@ -5199,7 +5191,6 @@ section {
     font-weight: bold;
     color: #454546; }
     section h3 span {
-      color: #1dde85;
       text-transform: uppercase; }
   section p {
     font-size: 18px;
@@ -5264,25 +5255,12 @@ section {
   -webkit-transition: 0.5s all ease;
   -o-transition: 0.5s all ease;
   transition: 0.5s all ease; }
-  .works-box-button::before {
-    content: '\f061';
-    position: absolute;
-    top: 10px;
-    left: 257px;
-    color: #fff;
-    font-family: fontawesome;
-    -webkit-transition: 0.5s all ease;
-    -o-transition: 0.5s all ease;
-    transition: 0.5s all ease;
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1); }
   .works-box-button:hover {
-    border: 1px solid #1dde85;
+    border: 1px solid #F7CA18;
     text-decoration: none;
-    color: #1dde85; }
+    color: #F7CA18; }
     .works-box-button:hover::before {
-      color: #1dde85;
+      color: #F7CA18;
       -webkit-transform: scale(1.2);
           -ms-transform: scale(1.2);
               transform: scale(1.2); }
@@ -5305,7 +5283,7 @@ section {
     display: block; }
     .us-works-nav a:hover {
       padding: 0 25px;
-      color: #1dde85; }
+      color: #F7CA18; }
 
 .fotorama__nav--thumbs .fotorama__nav__frame {
   margin: 5px 15px 0; }
@@ -5318,7 +5296,8 @@ section {
 
 .partners-galery {
   width: 95%;
-  margin: auto; }
+  margin: auto;
+  height: 252px; }
 
 .partners .partner {
   height: 100%;
@@ -5350,7 +5329,7 @@ section {
     position: absolute;
     top: 95px;
     outline: none; }
-    .owl-nav > button i {
+    .owl-nav > button svg {
       color: #999;
       font-size: 30px; }
     .owl-nav > button.owl-prev {
@@ -5396,7 +5375,7 @@ footer {
         transition: color 0.5s ease;
         cursor: pointer; }
         footer ul li a:hover {
-          color: #1dde85; }
+          color: #F7CA18; }
   footer span {
     position: relative;
     display: block;
@@ -5427,11 +5406,11 @@ footer {
               transform: scale(1);
       cursor: pointer; }
       footer .fa i:hover {
-        color: #1dde85;
+        color: #F7CA18;
         -webkit-transform: scale(1.1);
             -ms-transform: scale(1.1);
                 transform: scale(1.1);
-        border-color: #1dde85; }
+        border-color: #F7CA18; }
   footer input {
     height: 50px; }
   footer .button {
@@ -5439,6 +5418,33 @@ footer {
     footer .button a {
       text-decoration: none;
       color: #fff; }
+
+.header-vid {
+  height: 50vh; }
+
+.slogan-vid {
+  margin-top: 14%; }
+
+.description-vid img {
+  width: 100%;
+  height: 366px; }
+
+.description-vid p {
+  font-weight: 400;
+  text-align: justify; }
+
+.us-works-nav-vid {
+  margin-top: 0;
+  padding: 0;
+  font-size: 16px;
+  text-align: right; }
+  .us-works-nav-vid li {
+    margin: 8px;
+    margin-right: 0; }
+    .us-works-nav-vid li a {
+      padding: 0; }
+      .us-works-nav-vid li a:hover {
+        padding: 0 10px; }
 
 /*==========  Desktop First  ==========*/
 @media (max-width: 991.98px) {
@@ -5502,8 +5508,7 @@ footer {
 @media (max-width: 575.98px) {
   nav.top_nav-menu ul {
     margin-top: 20px;
-    -moz-text-align-last: right;
-         text-align-last: right; }
+    text-align-last: right; }
     nav.top_nav-menu ul li {
       border-bottom: 1px solid #666;
       width: 100%; }
@@ -5517,7 +5522,7 @@ footer {
         -o-transition: 0.5s all;
         transition: 0.5s all; }
         nav.top_nav-menu ul li a:hover {
-          color: #1dde85;
+          color: #F7CA18;
           padding-right: 50px; }
   .close_menu {
     display: -webkit-box;
