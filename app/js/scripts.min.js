@@ -1,5 +1,56 @@
 window.addEventListener('DOMContentLoaded', function() {
 
+	let content = document.querySelectorAll('section'),
+		prevButton = document.querySelector('.prev-button'),
+		nextButton = document.querySelector('.next-button'),
+		idlePeriod = 100,
+		animationDuration = 1000;
+
+	let lastAnimation = 0;
+	let index = 0;
+
+
+	prevButton.addEventListener('click', () => {
+	  if (index < 1) return;
+		index--;
+	  
+		content.forEach((section, i) => {
+			if (i === index) {
+	    		section.scrollIntoView({behavior: "smooth"});
+	    	}
+	  	});
+	})
+
+	nextButton.addEventListener('click', function() {
+	  if (index > content.length + 1) return;
+	  index++;
+	  content.forEach((section, i) => {
+	    if (i === index) {
+	      section.scrollIntoView({behavior: "smooth"});
+	    }
+	  })
+	})
+
+	document.addEventListener('wheel', event => {
+	  var delta = event.wheelDelta;
+	  var timeNow = new Date().getTime();
+	  // Cancel scroll if currently animating or within quiet period
+	  if(timeNow - lastAnimation < idlePeriod + animationDuration) {
+	    event.preventDefault();
+	    return;
+	  }
+	  
+	  if (delta < 0) {
+	    var event = new Event('click');
+	    nextButton.dispatchEvent(event);
+	  } else {
+	    var event = new Event('click');
+	    prevButton.dispatchEvent(event);
+	  }
+	  
+	  lastAnimation = timeNow;
+	}) 
+
 	//tabs
     let tab = document.querySelectorAll('.info-header-tab'),
         info = document.querySelector('.info-header'),

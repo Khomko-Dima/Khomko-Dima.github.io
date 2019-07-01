@@ -103,6 +103,13 @@ h2
 	font-family: $MB
 	text-align: center
 //site
+main 
+	height: 100vh
+	overflow: hidden
+section 
+	height: 100vh
+	overflow: hidden
+
 header
 	color: #fff
 	width: 100%
@@ -141,7 +148,7 @@ header
 			display: block
 			a 
 				color: #fff
-.header-flex
+.container-flex
 	display: flex
 	position: relative
 	height: 100%
@@ -194,7 +201,6 @@ header
 				background-color: $accent
 				height: 18px
 				width: 18px
-.slider-item
 .counter
 	background-color: rgba($blue, 0.25)
 	overflow: hidden
@@ -233,7 +239,7 @@ header
 		&:last-child
 			margin-bottom: 30px
 .services
-	margin-top: 150px
+	margin-top: 20px
 	&-box
 		margin-top: 30px
 		position: relative
@@ -311,9 +317,8 @@ header
 		display: none
 	.show 
 		display: flex
-#stats
+.stats-container
 	width: 100%
-	margin-top: 80px
 	background: no-repeat
 	background-size: cover
 	background-position: center
@@ -367,24 +372,25 @@ header
 				border-radius: 50%
 				line-height: 65px
 .gallery
+	height: 100%
 	.slider
-		margin-top: 150px
 		position: relative
+		display: flex
+		flex-direction: column
 		&-title 
 			font-size: 32px
 			text-transform: uppercase
 			text-align: center
 			font-family: MB
 		.wrap
-			width: 100%
 			position: relative
-			.slider-item 
-				width: 80%
+			.slider-item
 				margin: 0 auto
-				margin-top: 50px
 				position: relative
 				img
-					width: 100%
+					display: block
+					max-width: 100%
+					height: auto
 			.prev
 				position: absolute
 				cursor: pointer
@@ -437,8 +443,8 @@ header
 			background-color: $grey
 			&-active 
 				background-color: $accent
-.prices
-	margin-top: 150px
+
+
 .prices-block
 	margin-top: 50px
 	display: block
@@ -520,9 +526,8 @@ header
 			&:before
 				content: '"'
 .getInTouch
-	margin-top: 150px
 	&-box
-		margin-top: 50px
+		margin-top: 10px
 		text-align: center
 		i 
 			color: $accent
@@ -536,7 +541,7 @@ header
 		display: block
 		box-shadow: 0px 0px 50px 5px rgba($darc, 0.18)
 		padding: 15px
-		margin-top: 50px
+		margin-top: 20px
 		form 
 			display: flex
 			overflow: hidden
