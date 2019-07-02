@@ -15,7 +15,12 @@
 	<link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
-	<header style="background-image: url(img/header.jpg);">
+	<div class="scene">
+		<div data-speed="10" class="layer layer-bg"></div>
+		<div data-speed="40" class="layer layer-1"></div>
+		<div data-speed="80" class="layer layer-2"></div>
+	</div>
+	<header>
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-lg-3">
@@ -24,17 +29,17 @@
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<div class="menu">
+					<nav class="menu">
 						<ul>
 							<li><a href="#">Home</a></li>
-							<li><a href="#">Servises</a></li>
-							<li><a href="#">Info</a></li>
-							<li><a href="#">Stats</a></li>
-							<li><a href="#">Gallery</a></li>
-							<li><a href="#">Reviews</a></li>
-							<li><a href="#">Contact Us</a></li>
+							<li><a href="#services">Servises</a></li>
+							<li><a href="#info">Info</a></li>
+							<li><a href="#stats">Stats</a></li>
+							<li><a href="#gallery">Gallery</a></li>
+							<li><a href="#reviews">Reviews</a></li>
+							<li><a href="#getInTouch">Contact Us</a></li>
 						</ul>
-					</div>
+					</nav>
 				</div>
 			</div>
 		</div>
@@ -42,7 +47,7 @@
 			<div class="flex-center">
 				<div class="container">
 					<div class="row justify-content-between">
-
+	
 						<div class="col-lg-4 offset-1">
 							<div class="gallery-price">
 								<div class="slider">
@@ -50,17 +55,17 @@
 										<div class="slider-item fade">
 											<h3>China</h3>
 											<p>from</p>
-											<div class="slider-item-total"><span>1500</span></div>
+											<div class="slider-item-total"><span>1000</span></div>
 										</div>
 										<div class="slider-item fade">
-											<h3>China1</h3>
+											<h3>Japan</h3>
 											<p>from</p>
 											<div class="slider-item-total"><span>1200</span></div>
 										</div>
 										<div class="slider-item fade">
-											<h3>China2</h3>
+											<h3>Korea</h3>
 											<p>from</p>
-											<div class="slider-item-total"><span>1500</span></div>
+											<div class="slider-item-total"><span>1250</span></div>
 										</div>
 									</div>
 									<div class="slider-dots">
@@ -71,46 +76,47 @@
 								</div>
 							</div>
 						</div>
-
-
+	
+	
 						<div class="col-lg-5">
 							<div class="counter" id="price">
 								<div class="counter-title">Search Our Tours</div>
-
+	
 								<div class="counter-block">
 									<input type="number" min="1" step="1" class="counter-block-input" placeholder="Number of seats" required>
 								</div>
-
+	
 								<div class="counter-block">
 									<input type="number" min="1" step="1" class="counter-block-input" placeholder="Many days" required>
 								</div>
-
+	
 								<div class="counter-block">
 									<div class="counter-block-option">Search Location</div>
 									<select name="place" id="select">
 										<option id="china" value="1">China</option>
-										<option id="japan" value="1.5">Japan</option>
-										<option id="korea" value="1.8">Korea</option>
+										<option id="japan" value="1.2">Japan</option>
+										<option id="korea" value="1.25">Korea</option>
 									</select>
 								</div>
-
-								<div class="counter-total"><span id="total"></span></div>
-
+								<div class="counter-block">
+									<div class="counter-block-total">The cost of travel <span id="total"></span></div>
+								</div>
+									
 							</div> <!-- counter -->
 						</div>
-
+	
 					</div>
 				</div>
 			</div>
 		</div> <!-- header-flex -->
 	</header>
-
+	
 	<section id="services" class="services">
 		<div class="container">
 			<div class="row justify-content-center">
 				<h2>OUR SERVICES</h2>
 				<div class="row">
-
+	
 					<div class="col-lg-4">
 						<div class="services-box">
 							<i class="fas fa-h-square"></i>
@@ -118,7 +124,7 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolores voluptatum ducimus magni nam magnam.</p>
 						</div>
 					</div>
-
+	
 					<div class="col-lg-4">
 						<div class="services-box">
 							<i class="fab fa-glide-g"></i>
@@ -126,7 +132,7 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quaerat rerum earum aut harum est.</p>
 						</div>
 					</div>
-
+	
 					<div class="col-lg-4">
 						<div class="services-box">
 							<i class="fas fa-fighter-jet"></i>
@@ -134,62 +140,62 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit debitis, possimus molestiae harum velit ex!</p>
 						</div>
 					</div>
-
+	
 				</div>
 			</div>
 		</div>
 	</section>
-
+	
 	<section id="info">
 			<div class="container">
 				<div class="info">
-
+	
 					<div class="info-header">
-						<div class="info-header-tab">Лечение</div>
-						<div class="info-header-tab">Отдых</div>
-						<div class="info-header-tab">Природа</div>
+						<div class="info-header-tab">Treatment</div>
+						<div class="info-header-tab">Relax</div>
+						<div class="info-header-tab">Nature</div>
 					</div>
-
+	
 					<div class="info-tabcontent fade">
 						<div class="description">
-							<div class="description-title">Здоровый позвоночник</div>
-							<div class="description-text">Йога, массажи и плавание в море - помогут уставшей спине! Индийские йоги считали, что здоровье человека можно определить по тому, насколько здоров и гибок у него позвоночник.<br> Интересно, что бы древние йоги сказали, глядя на современного человека, который уже со школьного возраста мучается болями в спине, работает подолгу в неудобных сидячих позах и не умеет расслабляться, имеет искривление, которое в итоге приведет к болезням других органов? Йоги сказали бы – займись собой и срочно!
+							<div class="description-title">Healthy spine</div>
+							<div class="description-text">Yoga, massages and swimming in the sea - will help your tired back! Indian yogis believed that human health can be determined by how healthy and flexible his spine is.<br> I wonder what the ancient yogis would say, looking at the modern man, who already from school age suffers from back pain, works for a long time in uncomfortable sitting postures and does not know how to relax, has a curvature that will eventually lead to diseases of other organs? Yogis would say - take care of yourself and urgently!
 							</div>
 						</div>
 						<div class="photo">
 							<img src="img/massage.jpg" alt="Massage">
 						</div>
 					</div>
-
+	
 					<div class="info-tabcontent fade">
 						<div class="description">
-							<div class="description-title">Антистресс</div>
-							<div class="description-text">Аюрведа и йога утверждают, что главным источником здоровья нашего организма является здоровый ум. Программа «Антистресс» сначала убирает последствия стресса на физическом уровне, потом помогает избавиться от негативных и навязчивых мыслей, затем повышает общий уровень энергии.<br> Вы наконец вспомните ощущение "свободной головы", ощутите прилив физических сил и вспомните, что такое счастье.</div>
+							<div class="description-title">Antistress</div>
+							<div class="description-text">Ayurveda and yoga claim that the main source of health of our body is a healthy mind. The program "Antistress" first removes the effects of stress on the physical level, then helps to get rid of negative and obsessive thoughts, then increases the overall level of energy.<br> You will finally remember the feeling of “free head”, feel a surge of physical strength and remember what happiness is.</div>
 						</div>
 						<div class="photo">
 							<img src="img/sunset.jpg" alt="sunset">
 						</div>
 					</div>
-
+	
 					<div class="info-tabcontent fade">
 						<div class="description">
-							<div class="description-title">Восстановление</div>
-							<div class="description-text">Стрессы, жизнь в условиях города, плохая экология, загрязненные продукты и вода, напряженный ритм жизни - все это день ото дня отбирает у нас молодость и хорошее здоровье.<br> Одним кремом для лица не решить проблему омоложения организма, когда тебе за 40. Согласны?</div>
+							<div class="description-title">Recovery</div>
+							<div class="description-text">Stress, life in the conditions of the city, poor ecology, polluted products and water, an intense rhythm of life — all this takes us every day from our youth and good health.<br> One face cream does not solve the problem of rejuvenation of the body when you are over 40. Do you agree?</div>
 						</div>
 						<div class="photo">
 							<img src="img/sunrise.jpg" alt="sunrise">
 						</div>
 					</div>
-
+	
 				</div>
 			</div>
 	</section>
-
+	
 	<section id="stats" style="background-image: url(img/stats1.jpg);">
 		<div class="stats">
 			<div class="container">
 				<div class="row">
-
+	
 					<div class="col-lg-5">
 						<div class="stats-left">
 							<h3>Years in the field</h3>
@@ -201,32 +207,32 @@
 									
 						</div>
 					</div>
-
+	
 					<div class="col-lg-5 offset-1">
 						<div class="stats-right">
 							<div class="stats-right-item">
 								<p>Travel Joy</p>
-								<h4>12k</h4>
+								<h4 id="travel-joy">12k</h4>
 								<i class="fas fa-users"></i>
 							</div>
 							<div class="stats-right-item">
 								<p>World Tours</p>
-								<h4>15k</h4>
+								<h4 id="world-tours">15k</h4>
 								<i class="fas fa-clipboard-list"></i>
 							</div>
 							<div class="stats-right-item">
 								<p>Citi Tours</p>
-								<h4>25k</h4>
+								<h4 id="citi-tours">25k</h4>
 								<i class="fas fa-copy"></i>
 							</div>
 						</div>
 					</div>
-
+	
 				</div>
 			</div>
 		</div> <!-- stats -->
 	</section>
-
+	
 	<section id="gallery">
 		<div class="gallery">
 			<div class="slider" id="photo">
@@ -256,7 +262,7 @@
 				</div>
 		</div>
 	</section>
-
+	
 	<section id="prices">
 		<div class="prices">
 			<div class="container">
@@ -316,7 +322,7 @@
 			</div>
 		</div>
 	</section>
-
+	
 	<section id="reviews">
 		<div class="reviews">
 			<div class="container">
@@ -350,13 +356,13 @@
 	<section id="getInTouch">
 		<div class="getInTouch">
 			<div class="container">
-
+	
 				<div class="row">
 					<div class="col-lg">
 						<h2>GET IN TOUCH WITH US</h2>
 					</div>
 				</div>
-
+	
 				<div class="row justify-content-around">
 					<div class="col-lg-3">
 						<div class="getInTouch-box">
@@ -383,7 +389,7 @@
 						</div>
 					</div>
 				</div>
-
+	
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="getInTouch-form">
@@ -403,92 +409,92 @@
 			</div>
 		</div>
 	</section>
-
-<div class="popups">
-	<div class="overlay fade">
-		<div class="popup">
-			<div class="popup-close">&times;</div>
-			<div class="popup-title">China</div>
-			<div class="popup-form">
-				<form action="#" class="China-form">
-					<div class="popup-form-header">
-						Learn more about your holiday.
-					</div>
-					<label class="popup-form__label" for="phone">
-						Enter your phone number:
-					</label>
-					<input class="popup-form__input" name="China" type="tel" required placeholder="+7(978) 973 33 45">
-					<button class="button popup-form__btn">Submit your application</button>
-				</form>
+	
+	<div class="popups">
+		<div class="overlay fade">
+			<div class="popup">
+				<div class="popup-close">&times;</div>
+				<div class="popup-title">China</div>
+				<div class="popup-form">
+					<form action="#" class="China-form">
+						<div class="popup-form-header">
+							Learn more about your holiday.
+						</div>
+						<label class="popup-form__label" for="phone">
+							Enter your phone number:
+						</label>
+						<input class="popup-form__input" name="China" type="tel" required placeholder="+7(978) 973 33 45">
+						<button class="button popup-form__btn">Submit your application</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<div class="overlay fade">
+			<div class="popup">
+				<div class="popup-close">&times;</div>
+				<div class="popup-title">Malaysia</div>
+				<div class="popup-form" style="background-image: url(img/modal.jpg);">
+					<form action="#" class="Malaysia-form">
+						<div class="popup-form-header">
+							Learn more about your holiday.
+						</div>
+						<label class="popup-form__label" for="phone">
+							Enter your phone number:
+						</label>
+						<input class="popup-form__input" name="Malaysia" type="tel" required placeholder="+7(978) 973 33 45">
+						<button class="button popup-form__btn">
+						Оставить заявку!
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<div class="overlay fade">
+			<div class="popup">
+				<div class="popup-close">&times;</div>
+				<div class="popup-title">Japan</div>
+				<div class="popup-form">
+					<form action="#" class="Japan-form">
+						<div class="popup-form-header">
+							Learn more about your holiday.
+						</div>
+						<label class="popup-form__label" for="phone">
+							Enter your phone number:
+						</label>
+						<input class="popup-form__input" name="Japan" type="tel" required placeholder="+7(978) 973 33 45">
+						<button class="button popup-form__btn">
+						Оставить заявку!
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<div class="overlay fade">
+			<div class="popup">
+				<div class="popup-close">&times;</div>
+				<div class="popup-title">Singapore</div>
+				<div class="popup-form">
+					<form action="#" class="Singapore-form">
+						<div class="popup-form-header">
+							Learn more about your holiday.
+						</div>
+						<label class="popup-form__label" for="phone">
+							Enter your phone number:
+						</label>
+						<input class="popup-form__input" name="Singapore" type="tel" required placeholder="+7(978) 973 33 45">
+						<button class="button popup-form__btn">
+						Оставить заявку!
+						</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
-
-	<div class="overlay fade">
-		<div class="popup">
-			<div class="popup-close">&times;</div>
-			<div class="popup-title">Malaysia</div>
-			<div class="popup-form" style="background-image: url(img/modal.jpg);">
-				<form action="#" class="Malaysia-form">
-					<div class="popup-form-header">
-						Learn more about your holiday.
-					</div>
-					<label class="popup-form__label" for="phone">
-						Enter your phone number:
-					</label>
-					<input class="popup-form__input" name="Malaysia" type="tel" required placeholder="+7(978) 973 33 45">
-					<button class="button popup-form__btn">
-					Оставить заявку!
-					</button>
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<div class="overlay fade">
-		<div class="popup">
-			<div class="popup-close">&times;</div>
-			<div class="popup-title">Japan</div>
-			<div class="popup-form">
-				<form action="#" class="Japan-form">
-					<div class="popup-form-header">
-						Learn more about your holiday.
-					</div>
-					<label class="popup-form__label" for="phone">
-						Enter your phone number:
-					</label>
-					<input class="popup-form__input" name="Japan" type="tel" required placeholder="+7(978) 973 33 45">
-					<button class="button popup-form__btn">
-					Оставить заявку!
-					</button>
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<div class="overlay fade">
-		<div class="popup">
-			<div class="popup-close">&times;</div>
-			<div class="popup-title">Singapore</div>
-			<div class="popup-form">
-				<form action="#" class="Singapore-form">
-					<div class="popup-form-header">
-						Learn more about your holiday.
-					</div>
-					<label class="popup-form__label" for="phone">
-						Enter your phone number:
-					</label>
-					<input class="popup-form__input" name="Singapore" type="tel" required placeholder="+7(978) 973 33 45">
-					<button class="button popup-form__btn">
-					Оставить заявку!
-					</button>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-
-
+	
+	
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 <script src="js/scripts.min.js"></script>
