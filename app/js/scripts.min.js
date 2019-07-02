@@ -1,5 +1,81 @@
 window.addEventListener('DOMContentLoaded', function() {
 
+	let linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
+	    V = 0.3;  // скорость
+	for (let i = 0; i < linkNav.length; i++) {
+	    linkNav[i].addEventListener('click', function(event) {
+	        event.preventDefault();
+	        let w = window.pageYOffset,  // прокрутка
+	            hash = this.href.replace(/[^#]*(.*)/, '$1'),  // к id элемента, к которому нужно перейти
+	        	t = document.querySelector(hash).getBoundingClientRect().top,  // отступ от окна браузера до id
+	            start = null;
+
+	        requestAnimationFrame(step); //анимация с callback функцией 
+
+	        	function step(time) {
+	            	if (start === null) start = time;
+	            		var progress = time - start,
+	                	r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+	            		window.scrollTo(0,r);
+	            	if (r != w + t) {
+	                	requestAnimationFrame(step)
+	            	} else {
+	                	location.hash = hash  // URL с хэшем
+	            	}
+	        	}
+	    }, false);
+	};
+
+	//paralax
+	document.addEventListener('mousemove', function(event) {
+		this.querySelectorAll('.layer').forEach(layer => {
+			let speed = layer.getAttribute('data-speed'); // скорость движения this элемента
+			layer.style.transform = 'translateX(' + event.clientX*speed/1000 + 'px)';
+		});
+	});
+
+	// Calc
+    let persons = document.querySelectorAll('.counter-block-input')[0],
+        restDays = document.querySelectorAll('.counter-block-input')[1],
+        place = document.getElementById('select'),
+        totalValue = document.getElementById('total'),
+        personsSum = 0,
+        daysSum = 0,
+        total = 0;
+
+    totalValue.innerHTML = '';
+
+    persons.addEventListener('change', function() {
+        personsSum = +this.value;
+        total = (daysSum * personsSum)*100;
+
+        if(restDays.value == '') {
+            totalValue.innerHTML = 0;
+        } else {
+            totalValue.innerHTML = total;
+        }
+    });
+
+    restDays.addEventListener('change', function() {
+        daysSum = +this.value;
+        total = (daysSum * personsSum)*100;
+
+        if(persons.value == '') {
+            totalValue.innerHTML = 0;
+        } else {
+            totalValue.innerHTML = total;
+        }
+    });
+
+    place.addEventListener('change', function() {
+        if (restDays.value == '' || persons.value == '') {
+            totalValue.innerHTML = 0;
+        } else {
+            let a = total;
+            totalValue.innerHTML = a * this.options[this.selectedIndex].value;
+        }
+    });
+
 	//tabs
     let tab = document.querySelectorAll('.info-header-tab'),
         info = document.querySelector('.info-header'),
@@ -10,8 +86,7 @@ window.addEventListener('DOMContentLoaded', function() {
             tabContent[i].classList.remove('show');
             tabContent[i].classList.add('hide');
         }
-    }
-
+    };
     hideTabContent(1);
 
     function showTabContent(b) {
@@ -19,7 +94,7 @@ window.addEventListener('DOMContentLoaded', function() {
             tabContent[b].classList.remove('hide');
             tabContent[b].classList.add('show');
         }
-    }
+    };
 
     info.addEventListener('click', function(event) {
         let target = event.target;
@@ -32,7 +107,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-
     });
 
     // Slider
@@ -102,51 +176,46 @@ window.addEventListener('DOMContentLoaded', function() {
 	    });
     }
 
-    // Calc
+    //stats
+	let statsYers = document.getElementById('stats-yers'),
+		travelJoy = document.getElementById('travel-joy'),
+		worldTours = document.getElementById('world-tours'),
+		citiTours = document.getElementById('citi-tours');
 
-    let persons = document.querySelectorAll('.counter-block-input')[0],
-        restDays = document.querySelectorAll('.counter-block-input')[1],
-        place = document.getElementById('select'),
-        totalValue = document.getElementById('total'),
-        personsSum = 0,
-        daysSum = 0,
-        total = 0;
+	function catchData() {
+        return new Promise(function(resolve, reject){
+            let request = new XMLHttpRequest();
+            request.open("GET", "js/current.json");
+        
+            request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+            request.send();
+        
+            request.onload = function() {
+                if(request.readyState === 4) {
+                        if(request.status == 200) {
+                            resolve(this.response)
+                        }
+                        else {
+                            reject();
+                        
+                        }
+                }
+            }
+        });
+    };
 
-    totalValue.innerHTML = 0;
-
-    persons.addEventListener('change', function() {
-        personsSum = +this.value;
-        total = (daysSum + personsSum)*4000;
-
-        if(restDays.value == '') {
-            totalValue.innerHTML = 0;
-        } else {
-            totalValue.innerHTML = total;
-        }
-    });
-
-    restDays.addEventListener('change', function() {
-        daysSum = +this.value;
-        total = (daysSum + personsSum)*4000;
-
-        if(persons.value == '') {
-            totalValue.innerHTML = 0;
-        } else {
-            totalValue.innerHTML = total;
-        }
-    });
-
-    place.addEventListener('change', function() {
-        if (restDays.value == '' || persons.value == '') {
-            totalValue.innerHTML = 0;
-        } else {
-            let a = total;
-            totalValue.innerHTML = a * this.options[this.selectedIndex].value;
-        }
-    });
+    catchData()
+        .then(response => {
+            let data = JSON.parse(response);
+            statsYers.innerHTML = data.statsYers + '+';
+            travelJoy.innerHTML = data.travelJoy + 'k';
+            worldTours.innerHTML = data.worldTours + 'k';
+            citiTours.innerHTML = data.citiTours + 'k';
+        })
+        .then(() => console.log(5000))
+        .catch(() => inputUsd.value = "Что-то пошло не так")
 
     // Form
-
     let message = {
         loading: 'Загрузка...',
         success: 'Спасибо! Скоро мы с вами свяжемся!',
