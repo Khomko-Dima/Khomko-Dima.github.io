@@ -1,15 +1,16 @@
 window.addEventListener('DOMContentLoaded', function() {
 
 	let linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
-	    V = 0.5;  // скорость
+	    V = 0.3;  // скорость
 	for (let i = 0; i < linkNav.length; i++) {
 	    linkNav[i].addEventListener('click', function(event) {
 	        event.preventDefault();
-	        let w = window.pageYOffset,  // производим прокрутка прокрутка
+	        let w = window.pageYOffset,  // прокрутка
 	            hash = this.href.replace(/[^#]*(.*)/, '$1'),  // к id элемента, к которому нужно перейти
 	        	t = document.querySelector(hash).getBoundingClientRect().top,  // отступ от окна браузера до id
 	            start = null;
-	        requestAnimationFrame(step);
+
+	        requestAnimationFrame(step); //анимация с callback функцией 
 
 	        	function step(time) {
 	            	if (start === null) start = time;
@@ -28,7 +29,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	//paralax
 	document.addEventListener('mousemove', function(event) {
 		this.querySelectorAll('.layer').forEach(layer => {
-			let speed = layer.getAttribute('data-speed');
+			let speed = layer.getAttribute('data-speed'); // скорость движения this элемента
 			layer.style.transform = 'translateX(' + event.clientX*speed/1000 + 'px)';
 		});
 	});
