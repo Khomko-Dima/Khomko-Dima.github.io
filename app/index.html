@@ -21,6 +21,19 @@
 		<div data-speed="80" class="layer layer-2"></div>
 	</div>
 	<header>
+		<nav class="menu-dop">
+			<div class="menu-dop-triger">Menu</div>
+			<ul class="menu-dop-gl">
+				<li><a href="#">Home</a></li>
+				<li><a href="#services">Servises</a></li>
+				<li><a href="#info">Info</a></li>
+				<li><a href="#stats">Stats</a></li>
+				<li><a href="#gallery">Gallery</a></li>
+				<li><a href="#reviews">Reviews</a></li>
+				<li><a href="#getInTouch">Contact Us</a></li>
+			</ul>
+		</nav>
+
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-lg-3">
@@ -28,8 +41,9 @@
 						Trip Spot
 					</div>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-8">
 					<nav class="menu">
+						<!-- <div class="menu-triger">Menu</div> -->
 						<ul>
 							<li><a href="#">Home</a></li>
 							<li><a href="#services">Servises</a></li>
@@ -99,7 +113,7 @@
 									</select>
 								</div>
 								<div class="counter-block">
-									<div class="counter-block-total">The cost of travel <span id="total"></span></div>
+									<div class="counter-block-total">The cost of travel:<span id="total"></span></div>
 								</div>
 									
 							</div> <!-- counter -->
@@ -117,7 +131,7 @@
 				<h2>OUR SERVICES</h2>
 				<div class="row">
 	
-					<div class="col-lg-4">
+					<div class="col-lg-4 col-md-4">
 						<div class="services-box">
 							<i class="fas fa-h-square"></i>
 							<h3>Best Hotels</h3>
@@ -125,7 +139,7 @@
 						</div>
 					</div>
 	
-					<div class="col-lg-4">
+					<div class="col-lg-4 col-md-4">
 						<div class="services-box">
 							<i class="fab fa-glide-g"></i>
 							<h3>Tourist Guide</h3>
@@ -133,7 +147,7 @@
 						</div>
 					</div>
 	
-					<div class="col-lg-4">
+					<div class="col-lg-4 col-md-4">
 						<div class="services-box">
 							<i class="fas fa-fighter-jet"></i>
 							<h3>Flight Tickets</h3>
@@ -194,7 +208,7 @@
 	<section id="stats" style="background-image: url(img/stats1.jpg);">
 		<div class="stats">
 			<div class="container">
-				<div class="row">
+				<div class="row justify-content-between">
 	
 					<div class="col-lg-5">
 						<div class="stats-left">
@@ -208,7 +222,7 @@
 						</div>
 					</div>
 	
-					<div class="col-lg-5 offset-1">
+					<div class="col-lg-5">
 						<div class="stats-right">
 							<div class="stats-right-item">
 								<p>Travel Joy</p>
@@ -270,7 +284,7 @@
 					<h2>TOUR PRICES</h2>
 				</div>
 				<div class="row">
-					<div class="col-lg-3">
+					<div class="col-lg-3 col-md-6 col-sm-6">
 						<div class="prices-block">
 							<h3>China</h3>
 							<div class="prices-block-item" style="background-image: url(img/p1.jpg);">
@@ -282,7 +296,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-3 col-md-6 col-sm-6">
 						<div class="prices-block">
 							<h3>Malaysia</h3>
 							<div class="prices-block-item"style="background-image: url(img/p2.jpg);">
@@ -294,7 +308,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-3 col-md-6 col-sm-6">
 						<div class="prices-block">
 							<h3>Japan</h3>
 							<div class="prices-block-item"style="background-image: url(img/p3.jpg);">
@@ -306,7 +320,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-3 col-md-6 col-sm-6">
 						<div class="prices-block">
 							<h3>Singapore</h3>
 							<div class="prices-block-item"style="background-image: url(img/p4.jpg);">
@@ -323,35 +337,35 @@
 		</div>
 	</section>
 	
-	<section id="reviews">
-		<div class="reviews">
-			<div class="container">
-				<div class="row justify-content-center">
-					<h2>CLIENT REVIEWS</h2>
-					<div class="row justify-content-between">
-						<div class="col-lg-4">
-							<div class="reviews-block">
-								<span id="name-user">Lorem Lorem</span>
-								<p id="reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quidem, ea eaque, distinctio ab delectus!</p>
-							</div>
+<!-- 	<section id="reviews">
+	<div class="reviews">
+		<div class="container">
+			<div class="row justify-content-center">
+				<h2>CLIENT REVIEWS</h2>
+				<div class="row justify-content-between">
+					<div class="col-lg-4">
+						<div class="reviews-block">
+							<span id="name-user">Lorem Lorem</span>
+							<p id="reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quidem, ea eaque, distinctio ab delectus!</p>
 						</div>
-						<div class="col-lg-4">
-							<div class="reviews-block">
-								<span id="name-user">Lorem Lorem</span>
-								<p id="reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo veniam tenetur, reiciendis dolores qui distinctio.</p>
-							</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="reviews-block">
+							<span id="name-user">Lorem Lorem</span>
+							<p id="reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo veniam tenetur, reiciendis dolores qui distinctio.</p>
 						</div>
-						<div class="col-lg-4">
-							<div class="reviews-block">
-								<span id="name-user">Lorem Lorem</span>
-								<p id="reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, distinctio? Aliquam, voluptas. Aspernatur, quaerat consequatur.</p>
-							</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="reviews-block">
+							<span id="name-user">Lorem Lorem</span>
+							<p id="reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, distinctio? Aliquam, voluptas. Aspernatur, quaerat consequatur.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section> -->
 	
 	<section id="getInTouch">
 		<div class="getInTouch">
@@ -364,7 +378,7 @@
 				</div>
 	
 				<div class="row justify-content-around">
-					<div class="col-lg-3">
+					<div class="col-lg-3 col-md-3">
 						<div class="getInTouch-box">
 							<i class="fas fa-map-marker-alt"></i>
 							<h3>Location</h3>
@@ -372,7 +386,7 @@
 							<span>Addison Township, IL, USA.</span>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-3 col-md-3">
 						<div class="getInTouch-box">
 							<i class="far fa-envelope-open"></i>
 							<h3>Phone & Email</h3>
@@ -380,7 +394,7 @@
 							<span>info@examplemail.com</span>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-3 col-md-3">
 						<div class="getInTouch-box">
 							<i class="fas fa-building"></i>
 							<h3>Our Branches</h3>
@@ -402,7 +416,7 @@
 							</form>
 						</div>
 					</div>
-					<div class="col-lg-5">
+					<div class="col-lg-5 getInTouch-img">
 						<img class="img-responsive" src="img/c1.jpg" alt="send">
 					</div>
 				</div>

@@ -9,16 +9,43 @@
 
 //Large: ≥992px
 +media-breakpoint-down(lg)
-
+	
 //Medium: ≥768px
 +media-breakpoint-down(md)
-
+	.gallery-price
+		display: none
+	.info-tabcontent
+		flex-wrap: wrap
+	.info-tabcontent .description, .info-tabcontent .photo
+		width: 100%
+		margin: auto
+	.info-tabcontent .photo
+		margin-top: 15px
+	.stats-right
+		margin-top: 30px
+	.getInTouch-img
+		display: none
 //Small: ≥576px
 +media-breakpoint-down(sm)
-
+	.services 
+		margin-top: 50px
+	.info-header
+		flex-direction: column
+		height: 130px
+	.info-header-tab:hover:after 
+		width: 20%
+	.info-tabcontent
+		padding-top: 15px
+	.getInTouch-box
+		margin-top: 15px
+	.menu 
+		display: none
+	.menu-dop
+		display: block
 //Extra small: >0
 +media-breakpoint-down(xs)
-
+	.info
+		padding: 15px
 		
 /*==========  Mobile First  ==========*/
 

@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
 
+	//плавный переход по маякам
 	let linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
 	    V = 0.3;  // скорость
 	for (let i = 0; i < linkNav.length; i++) {
@@ -33,6 +34,18 @@ window.addEventListener('DOMContentLoaded', function() {
 			layer.style.transform = 'translateX(' + event.clientX*speed/1000 + 'px)';
 		});
 	});
+
+	//menu
+	let menuTriger = document.querySelector(".menu-dop-triger"),
+		menuGl = document.querySelector(".menu-dop-gl");
+
+
+	menuTriger.addEventListener('click', function() {
+		menuGl.classList.toggle("menu-active");
+		setTimeout(function() {
+			menuGl.classList.remove("menu-active");
+		}, 6000);
+	}, false);
 
 	// Calc
     let persons = document.querySelectorAll('.counter-block-input')[0],
