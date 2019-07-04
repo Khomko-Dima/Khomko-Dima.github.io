@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	for (let i = 0; i < linkNav.length; i++) {
 	    linkNav[i].addEventListener('click', function(event) {
 	        event.preventDefault();
-	        let w = window.pageYOffset,  // прокрутка
+	        let w = window.pageYOffset,  // вертикальная прокрутка страницы
 	            hash = this.href.replace(/[^#]*(.*)/, '$1'),  // к id элемента, к которому нужно перейти
 	        	t = document.querySelector(hash).getBoundingClientRect().top,  // отступ от окна браузера до id
 	            start = null;
@@ -54,7 +54,8 @@ window.addEventListener('DOMContentLoaded', function() {
         totalValue = document.getElementById('total'),
         personsSum = 0,
         daysSum = 0,
-        total = 0;
+        total = 0,
+        placeValue = 1;
 
     totalValue.innerHTML = '';
 
@@ -65,7 +66,7 @@ window.addEventListener('DOMContentLoaded', function() {
         if(restDays.value == '') {
             totalValue.innerHTML = 0;
         } else {
-            totalValue.innerHTML = total;
+            totalValue.innerHTML = total * placeValue;
         }
     });
 
@@ -76,12 +77,13 @@ window.addEventListener('DOMContentLoaded', function() {
         if(persons.value == '') {
             totalValue.innerHTML = 0;
         } else {
-            totalValue.innerHTML = total;
+            totalValue.innerHTML = total * placeValue;
         }
     });
 
     place.addEventListener('change', function() {
-        if (restDays.value == '' || persons.value == '') {
+    	placeValue = this.options[this.selectedIndex].value;
+        if (personsSum == 0 || daysSum == 0 ) {
             totalValue.innerHTML = 0;
         } else {
             let a = total;
@@ -124,24 +126,23 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Slider
 
-    let slideIndex = 1,
-    	sliderGallery = document.querySelector('.gallery'),
+    let sliderGallery = document.querySelector('.gallery'),
         slides = sliderGallery.querySelectorAll('.slider-item'),
         prev = sliderGallery.querySelector('.prev'),
         next = sliderGallery.querySelector('.next'),
         dotsWrap = sliderGallery.querySelector('.slider-dots'),
         dots = sliderGallery.querySelectorAll('.dot');
 
-    let slideIndexPrice = 1,
-    	sliderPrice = document.querySelector('.gallery-price'),
+    let sliderPrice = document.querySelector('.gallery-price'),
         slidesPrice = sliderPrice.querySelectorAll('.slider-item'),
         dotsWrapPrice = sliderPrice.querySelector('.slider-dots'),
         dotsPrice = sliderPrice.querySelectorAll('.dot');
 
-    slider(slideIndex, slides, prev, next, dotsWrap, dots),
-    slider(slideIndexPrice, slidesPrice, null, null, dotsWrapPrice, dotsPrice);
+    slider(slides, prev, next, dotsWrap, dots),
+    slider(slidesPrice, null, null, dotsWrapPrice, dotsPrice);
 
-    function slider(slideIndex, slides, prev, next, dotsWrap, dots) {
+    function slider(slides, prev, next, dotsWrap, dots) {
+    	let slideIndex = 1
     	showSlides(slideIndex);
 
 	    function showSlides(n) {
@@ -178,8 +179,6 @@ window.addEventListener('DOMContentLoaded', function() {
 			console.log("У слайдера отстутсвую элементы prev и next");
 		}
 
-	    
-
 	    dotsWrap.addEventListener('click', function(event) {
 	        for (let i = 0; i < dots.length + 1; i++) {
 	            if (event.target.classList.contains('dot') && event.target == dots[i-1]) {
@@ -205,13 +204,13 @@ window.addEventListener('DOMContentLoaded', function() {
         
             request.onload = function() {
                 if(request.readyState === 4) {
-                        if(request.status == 200) {
-                            resolve(this.response)
-                        }
-                        else {
-                            reject();
-                        
-                        }
+                    if(request.status == 200) {
+                        resolve(this.response)
+                    }
+                    else {
+                        reject();
+                    
+                    }
                 }
             }
         });
@@ -225,8 +224,7 @@ window.addEventListener('DOMContentLoaded', function() {
             worldTours.innerHTML = data.worldTours + 'k';
             citiTours.innerHTML = data.citiTours + 'k';
         })
-        .then(() => console.log(5000))
-        .catch(() => inputUsd.value = "Что-то пошло не так")
+        .catch(() => console.log("Что-то пошло не так"));
 
     // Form
     let message = {
@@ -279,9 +277,9 @@ window.addEventListener('DOMContentLoaded', function() {
             }; //postData end
 
             function clearInput() {
-               for(let i = 0; i < input.length;i++) {
-                input[i].value = '';
-                } 
+            	for(let i = 0; i < input.length;i++) {
+            		input[i].value = '';
+            	} 
             };
 
             postData(json)
@@ -338,18 +336,4 @@ window.addEventListener('DOMContentLoaded', function() {
     	}
     });
 
-
-	// $(function() {
- //        $(window).scroll(function() { 
- //            if($(this).scrollTop() != 0) {
- //                $('#toTop').fadeIn();
- //            }  
- //            else {
- //                $('#toTop').fadeOut();
- //            }
- //            });
- //        $('#toTop').click(function() {
- //            $('body,html').animate({scrollTop:0},800);
- //        });
- //    });
  });   
