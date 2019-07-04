@@ -190,7 +190,7 @@ header
 	opacity: 1
 	transform: translate(0, 5%)
 		
-.header-flex
+.container-flex
 	display: flex
 	position: relative
 	height: 100%
@@ -421,12 +421,14 @@ header
 				line-height: 65px
 .gallery
 	height: 100%
+	margin-top: 150px
 	.slider
 		position: relative
 		display: flex
 		flex-direction: column
 		&-title 
 			font-size: 32px
+			margin-bottom: 30px
 			text-transform: uppercase
 			text-align: center
 			font-family: MB
@@ -503,6 +505,8 @@ header
 	&-item
 		height: 300px
 		display: block
+		background: center no-repeat
+		background-size: cover
 		position: relative
 		overflow: hidden
 		&:hover
@@ -637,8 +641,8 @@ header
 		transform: translateX(-50%)
 		&-close 
 			position: absolute
-			right: -20px
-			top: -35px
+			right: 2px
+			top: -15px
 			cursor: pointer
 			font-size: 35px
 			color: #fff
