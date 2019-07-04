@@ -420,24 +420,25 @@ header
 				border-radius: 50%
 				line-height: 65px
 .gallery
+	height: 100%
 	.slider
-		margin-top: 150px
 		position: relative
+		display: flex
+		flex-direction: column
 		&-title 
 			font-size: 32px
 			text-transform: uppercase
 			text-align: center
 			font-family: MB
 		.wrap
-			width: 100%
 			position: relative
-			.slider-item 
-				width: 80%
+			.slider-item
 				margin: 0 auto
-				margin-top: 50px
 				position: relative
 				img
-					width: 100%
+					display: block
+					max-width: 100%
+					height: auto
 			.prev
 				position: absolute
 				cursor: pointer
