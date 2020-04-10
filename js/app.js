@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			openAccardion(e, el);
 		}))
 
-		const date = ['10.03', '14.03', '18.03', '22.03', '26.03', '30.03', '07.04', '03.04', '09.04'];
+		const date = ['10.03', '14.03', '18.03', '22.03', '26.03', '30.03', '03.04', '07.04', '10.04'];
 		const config = {
 		  type: 'line',
 		  data: {
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			  backgroundColor: 'rgba(0,255,0,0.5)',
 			  borderColor: 'rgba(0,255,0,0.5)',
 			  data: [
-				17, 51, 139, 350, 799, 1761, 3834, 6945, 8029
+				20, 59, 147, 367, 840, 1836, 4149, 7497, 11917
 			  ],
 			  fill: false,
 			}, {
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			  backgroundColor: '#1a9ebe',
 			  borderColor: '#1a9ebe',
 			  data: [
-				1520, 5605, 13050, 24722, 45178, 63460, 77488, 84689, 85407
+				1690, 6315, 14769, 28603, 56347, 87956, 119199, 141942, 157022
 			  ],
 			}]
 		  },
