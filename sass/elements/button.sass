@@ -1,0 +1,83 @@
+.button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $accent
+	padding: 15px 45px
+	font-size: 14px
+	font-weight: 400
+	line-height: 19px
+	text-transform: uppercase
+	border-radius: 5px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .3s ease
+	cursor: pointer
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($accent, 50%)
+		opacity: .18
+		border-bottom-left-radius: 5px
+		border-bottom-right-radius: 5px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($accent, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
+	&-togle
+		background-color: transparent
+		color: $accent
+		border: 3px solid $accent
+		transition: border .3s ease
+		padding: 10px 20px
+		display: none
+		span 
+			position: relative
+			&:before 
+				content: 'Показать '
+		&::after
+			display: none
+			transition: background-color .2s ease
+			position: absolute
+			content: ''
+			height: 4px
+			bottom: 0
+			width: 100%
+			background-color: darken($accent, 50%)
+			opacity: .18
+			border-bottom-left-radius: 5px
+			border-bottom-right-radius: 5px
+			left: 0
+			transition: background-color .3s ease
+		&:hover
+			border: 3px solid transparent
+			&::after
+				opacity: 1
+		&.active
+			background-color: $accent
+			color: #fff
+			span 
+				position: relative
+				&:before 
+					content: 'Скрыть '
+
+//Small: ≥576px
++media-breakpoint-down(sm)
+	.button
+		&-togle
+			display: block
+

@@ -1,346 +1,438 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
 
 	<meta charset="utf-8">
+	<title>Desair</title>
+	<meta name="description" content="Desair">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="img/favicon.png">
+	<meta property="og:image" content="img/dest/preview.jpg">
+	<link rel="stylesheet" href="css/app.min.css">
 
-	<title>Site</title>
-	<meta name="description" content="">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- Custom Browsers Color Start -->
-	<meta name="theme-color" content="#000">
-	<!-- Custom Browsers Color End -->
-	<link rel="stylesheet" href="css/main.min.css">
 </head>
+
 <body>
-	<div class="scene">
-		<div data-speed="10" class="layer layer-bg"></div>
-		<div data-speed="40" class="layer layer-1"></div>
-		<div data-speed="80" class="layer layer-2"></div>
-	</div>
-	<header>
-		<nav class="menu-dop">
-			<div class="menu-dop-triger">Menu</div>
-			<ul class="menu-dop-gl">
-				<li><a href="#">Home</a></li>
-				<li><a href="#services">Servises</a></li>
-				<li><a href="#info">Info</a></li>
-				<li><a href="#stats">Stats</a></li>
-				<li><a href="#gallery">Gallery</a></li>
-				<li><a href="#reviews">Reviews</a></li>
-				<li><a href="#getInTouch">Contact Us</a></li>
+<div class="navBurger" role="navigation" id="navToggle"></div>
+<header class="header" style="background-image: url(images/dest/header.jpg);">
+	<div class="container" id="header-container">
+		<div class="top-info">
+			<div class="left">
+				<div class="logo">
+					<img src="images/spray.png" alt="logo">
+					<span>Ультрафиолетовые дизенфекторы <br>воздуха в Испании</span>
+				</div>
+			</div>
+			<div class="right header__communication">
+				<div class="communication communication__header">
+					<div class="mesengers communication__mesengers">
+						<a href="#" class="viber">
+							<i class="fab fa-viber"></i>
+						</a>
+						<a href="#" class="whatsapp">
+							<i class="fab fa-whatsapp"></i>
+						</a>
+						<a href="#" class="telegram">
+							<i class="fab fa-telegram-plane"></i>
+						</a>
+					</div>
+				</div>
+				<div class="contact communication__contact">
+					<div class="tel">
+						<a href="tel:#">+8 (000) 000 00 00</a>
+					</div>
+					<div class="email">
+						<a href="mailto:#">test@gmail.ru</a>
+					</div>
+				</div>
+				<div class="button open_modal"
+			 		data-action="first" 
+			 		data-val-to-send="Кнока в шапке сайта"
+			 		data-target="1"
+					>Задать вопрос</div>
+			</div>
+		</div>
+		<nav class="menu">
+			<ul>
+				<li><a class="scrollto" href="#how-it-works">Как работает?</a></li>
+				<li><a class="scrollto" href="#certificates">Лицензии</a></li>
+				<li><a class="scrollto" href="#types">Виды</a></li>
+				<li><a class="scrollto" href="#who-uses">Кто уже использует?</a></li>
+				<li><a class="scrollto" href="#faq">FAQ</a></li>
+				<li><a class="scrollto" href="#reviews">Отзывы</a></li>
 			</ul>
 		</nav>
+		<div class="header__slogan">
+			<h1>Медицинские ультрафиолетовые дезинфекторы воздуха, <span class="accentText">убивающие 99,9% вирусов и бактерий</span> в любом помещении</h1>
+			<h2>Убивают вирус COVID-19, живущий в воздухе и на поверхностях.</h2>
+		</div>
+	</div>
+	<div class="form header__form" id="header-form">
+		<form action="#">
+			<span>Оставьте заявку и мы подберем подходящий дезинфектор для Вашего дома</span>
+			<div class="form-control">					
+				<input id="name-h" type="text" placeholder="Как вас зовут?" required>
+				<label for="name-h">Как вас зовут?</label>
+			</div>
+			<div class="form-control">
+				<input id="tel-h" type="text" placeholder="Введите контактный телефон" required>
+				<label for="tel-h">Введите контактный телефон</label>
+			</div>
+			<div class="button form__button">Оставить заявку</div>
+		</form>
+	</div>
+	<div class="image">
+		<img class="img-responsive" src="images/header_img.png" alt="">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</header>
 
+<main>
+	<!-- График -->
+	<section class="graf">
 		<div class="container">
-			<div class="row justify-content-between">
-				<div class="col-lg-3">
-					<div class="logo">
-						Trip Spot
+			<div class="row justify-content-center">
+				<h3 class="text-center title-h3 graf__title">Почему в самой большой стране мира — России так мало заболевших коронавирусом?</h3>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-7">
+					<canvas id="canvas" width="400" height="400" class="line_canvas"></canvas>
+				</div>
+				<div class="col-lg-6 col-md-5 graf__content">
+					<div class="graf__card card">
+						<div class="card__content">
+							<h4>Ответ прост</h4>
+							<p>С 2005 года повсеместно используются ультрафиолетовые <strong>дезинфекторы воздуха</strong>, а на сегодняшний день в России установлено более 300 000 тысяч дезинфекторов. Они установлены во всех государственных и муниципальных учреждениях, больницах, поликлиниках, детских садах, школах, салонах красоты, офисах и др. учреждениях и даже <strong>у президента</strong>.</p>
+						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Принцип работы -->
+	<section class="principle">
+		<div class="container">
+			<div class="row justify-content-center">
+				<h3 class="text-center title-h3 principle__title">Принцип работы</h3>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="principle__text">
+						<p>В дезинфекторах воздуха установление безозоновые ультрафиолетовые лампы фирмы <strong>PHILIPS®, LightTech®</strong> или <strong>Osram®</strong> с длиной волны <strong>253,7 нм.</strong></p>
+			
+						<p>УФ излучение стакой длиной волны обладает широким спектром действия на микроорганизмы, бактерии, вирусы, в том числе на <strong>COVID19</strong>, вирусы гриппа человека H1N, а также на грибы и споры.</p>
+			
+						<p>Самым губительным, в том числе и для вирусов и бактерий, считается коротковолновый ультрафиолет, в спектре <strong>от 100 до 280 нм.</strong></p>
+			
+						<p>Такой ультрафиолетовый свет не уничтожает частицы вируса, но вызывает в них мутации, изменяя структуру ДНК и РНК.  Он теряет свои основные свойства и способность размножаться и уже не представляет опасности.</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="principle__img">
+						<img class="img-responsive" src="images/dest/elements/lamp.png" alt="Принцип работы">
+						<span></span>
+						<span></span>
+						<span></span>
+						<a href="#"><i class="fas fa-cogs"></i>Связаться с сервисной службой</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Как это работает? -->
+	<section class="how-it-works" id="how-it-works">
+		<div class="container">
+			<div class="row justify-content-center">
+				<h3 class="text-center title-h3 how-it-works__title">Как это работает?</h3>
+			</div>
+			<div class="row justify-content-md-between">
+				<div class="col-lg-4 col-md-5">
+					<div class="how-it-works__card card">
+						<div class="card__content">
+							<p>Волны безоновых ультрафиолетовых
+							ламп фирм-мировых лидеров
+							PHILIPS®, LightTech® или Osram®
+							убивают микроорганнизмы, бактерии,
+							вирусы, в том числе и <strong>COVID19.</strong></p>
+						</div>
+					</div>
+					<div class="how-it-works__card card">
+						<div class="card__content">
+							<p>В зависимости от размера
+							помещения, через несколько часов
+							воздух полностью <strong>очищается</strong> от
+							вирусов и бактерий, а также
+							происходит <strong>фильтрация</strong> от пыли и
+							аллергенов (особенно полезно для
+							аллергиков).</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-2">
+					<div class="how-it-works__img">
+						<img class="img-responsive" src="images/dest/elements/diz.png" alt="diz">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-5">
+					<div class="how-it-works__card card">
+						<div class="card__content">
+							<p>Вы включаете дезинфектор нажатием на <strong>1 кнопку.</strong></p>
+						</div>
+					</div>
+					<div class="how-it-works__card card">
+						<div class="card__content">
+							<p>Раз в <strong>1-3 месяца</strong> меняете фильтр за несколько минут.</p>
+						</div>
+					</div>
+					<div class="how-it-works__card card">
+						<div class="card__content">
+							<p>Дезинфектор работает постоянно, его не нужно отключать, <strong>класс АА</strong> обеспечивает низкое потребление электроэнергии, при этом он работает бесшумно, а уходить из помещения при его работе не нужно.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Лицензии и сертификаты -->
+	<section class="certificates" id="certificates">
+		<div class="container">
+			<div class="row justify-content-center">
+				<h3 class="text-center title-h3 certificates__title">Лицензии и сертификаты</h3>
+			</div>
+			<div class="row">
 				<div class="col-lg-8">
-					<nav class="menu">
-						<!-- <div class="menu-triger">Menu</div> -->
-						<ul>
-							<li><a href="#">Home</a></li>
-							<li><a href="#services">Servises</a></li>
-							<li><a href="#info">Info</a></li>
-							<li><a href="#stats">Stats</a></li>
-							<li><a href="#gallery">Gallery</a></li>
-							<!-- <li><a href="#reviews">Reviews</a></li> -->
-							<li><a href="#getInTouch">Contact Us</a></li>
-						</ul>
-					</nav>
+					<h4 class="title-h4 certificates__description">
+						Мы не продем непроверенную продукцию, дезинфекторы Desair — сертифицированное медицинское оборудование, которое применяется во всем мире в медицинских учреждениях, детских садах, школах, государственных учреждениях.
+					</h4>
 				</div>
 			</div>
-		</div>
-		<div class="container-flex">
-			<div class="flex-center">
-				<div class="container">
-					<div class="row justify-content-between">
-	
-						<div class="col-lg-4 offset-1">
-							<div class="gallery-price">
-								<div class="slider">
-									<div class="wrap">
-										<div class="slider-item fade">
-											<h3>China</h3>
-											<p>from</p>
-											<div class="slider-item-total"><span>1000</span></div>
-										</div>
-										<div class="slider-item fade">
-											<h3>Japan</h3>
-											<p>from</p>
-											<div class="slider-item-total"><span>1200</span></div>
-										</div>
-										<div class="slider-item fade">
-											<h3>Korea</h3>
-											<p>from</p>
-											<div class="slider-item-total"><span>1250</span></div>
-										</div>
-									</div>
-									<div class="slider-dots">
-										<div class="dot dot-active"></div>
-										<div class="dot"></div>
-										<div class="dot"></div>
-									</div>
-								</div>
+			<div class="row justify-content-around">
+				<div class="col-lg-3 col-md-5 col-sm-6 col-6">
+					<div class="certificates__link">
+						<a href="#" target="_blank">
+							<div class="parent">
+								<img class="lazy img-responsive example-img"
+									src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+									data-src="images/dest/1.jpg"
+									data-srcset="images/dest/1.jpg"
+									alt="сертификат 1">
 							</div>
-						</div>
-	
-	
-						<div class="col-lg-5">
-							<div class="counter" id="price">
-								<div class="counter-title">Search Our Tours</div>
-	
-								<div class="counter-block">
-									<input type="number" min="1" step="1" class="counter-block-input" placeholder="Number of seats" required>
-								</div>
-	
-								<div class="counter-block">
-									<input type="number" min="1" step="1" class="counter-block-input" placeholder="Many days" required>
-								</div>
-	
-								<div class="counter-block">
-									<div class="counter-block-option">Search Location</div>
-									<select name="place" id="select">
-										<option id="china" value="1">China</option>
-										<option id="japan" value="1.2">Japan</option>
-										<option id="korea" value="1.25">Korea</option>
-									</select>
-								</div>
-								<div class="counter-block">
-									<div class="counter-block-total">The cost of travel:<span id="total"></span></div>
-								</div>
-									
-							</div> <!-- counter -->
-						</div>
-	
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-5 col-sm-6 col-6">
+					<div class="certificates__link">
+						<a href="#" target="_blank">
+							<div class="parent">
+								<img class="lazy img-responsive example-img"
+									src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+									data-src="images/dest/2.jpg"
+									data-srcset="images/dest/2.jpg"
+									alt="сертификат 2">
+							</div>
+						</a>
 					</div>
 				</div>
 			</div>
-		</div> <!-- header-flex -->
-	</header>
-	
-	<section id="services" class="services">
+		</div>
+	</section>
+
+	<!-- Виды звуковых дезинфекторов -->
+	<section class="types" id="types">
 		<div class="container">
 			<div class="row justify-content-center">
-				<h2>OUR SERVICES</h2>
-				<div class="row">
-	
-					<div class="col-lg-4 col-md-4">
-						<div class="services-box">
-							<i class="fas fa-h-square"></i>
-							<h3>Best Hotels</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolores voluptatum ducimus magni nam magnam.</p>
-						</div>
-					</div>
-	
-					<div class="col-lg-4 col-md-4">
-						<div class="services-box">
-							<i class="fab fa-glide-g"></i>
-							<h3>Tourist Guide</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quaerat rerum earum aut harum est.</p>
-						</div>
-					</div>
-	
-					<div class="col-lg-4 col-md-4">
-						<div class="services-box">
-							<i class="fas fa-fighter-jet"></i>
-							<h3>Flight Tickets</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit debitis, possimus molestiae harum velit ex!</p>
-						</div>
-					</div>
-	
-				</div>
+				<h3 class="text-center title-h3 types__title">Виды звуковых дезинфекторов</h3>
 			</div>
-		</div>
-	</section>
-	
-	<section id="info">
-			<div class="container">
-				<div class="info">
-	
-					<div class="info-header">
-						<div class="info-header-tab">Treatment</div>
-						<div class="info-header-tab">Relax</div>
-						<div class="info-header-tab">Nature</div>
-					</div>
-	
-					<div class="info-tabcontent fade">
-						<div class="description">
-							<div class="description-title">Healthy spine</div>
-							<div class="description-text">Yoga, massages and swimming in the sea - will help your tired back! Indian yogis believed that human health can be determined by how healthy and flexible his spine is.<br> I wonder what the ancient yogis would say, looking at the modern man, who already from school age suffers from back pain, works for a long time in uncomfortable sitting postures and does not know how to relax, has a curvature that will eventually lead to diseases of other organs? Yogis would say - take care of yourself and urgently!
+			<div class="row justify-content-center">
+				<div class="col-lg-4 col-md-6">
+					<div class="types__card card">
+						<div class="card__content types__card-content">
+							<div class="types__card-img">
+								<div class="parent">
+									<img class="lazy img-responsive example-img"
+										src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+										data-src="images/dest/elements/card/1.jpg"
+										data-srcset="images/dest/elements/card/1.jpg"
+										alt="Desair Дезар-7 передвижной">
+								</div>
 							</div>
-						</div>
-						<div class="photo">
-							<img src="img/massage.jpg" alt="Massage">
-						</div>
-					</div>
-	
-					<div class="info-tabcontent fade">
-						<div class="description">
-							<div class="description-title">Antistress</div>
-							<div class="description-text">Ayurveda and yoga claim that the main source of health of our body is a healthy mind. The program "Antistress" first removes the effects of stress on the physical level, then helps to get rid of negative and obsessive thoughts, then increases the overall level of energy.<br> You will finally remember the feeling of “free head”, feel a surge of physical strength and remember what happiness is.</div>
-						</div>
-						<div class="photo">
-							<img src="img/sunset.jpg" alt="sunset">
-						</div>
-					</div>
-	
-					<div class="info-tabcontent fade">
-						<div class="description">
-							<div class="description-title">Recovery</div>
-							<div class="description-text">Stress, life in the conditions of the city, poor ecology, polluted products and water, an intense rhythm of life — all this takes us every day from our youth and good health.<br> One face cream does not solve the problem of rejuvenation of the body when you are over 40. Do you agree?</div>
-						</div>
-						<div class="photo">
-							<img src="img/sunrise.jpg" alt="sunrise">
-						</div>
-					</div>
-	
-				</div>
-			</div>
-	</section>
-	
-	<section id="stats" style="background-image: url(img/fone.jpg);">
-		<div class="stats">
-			<div class="container">
-				<div class="row justify-content-between">
-	
-					<div class="col-lg-5">
-						<div class="stats-left">
-							<h3>Years in the field</h3>
-								<p>Integer Pulvinar Leo Id Viverra Feugiat. Pellentesque Libero Justo, Semper At Tempus Vel, Ultrices In Ligula. Nulla Sollicit Sed.</p>
-								<div class="stats-left-years">
-									<strong id="stats-yers">15+</strong>
-									<p>Years of Experience</p>
-								</div>
-									
-						</div>
-					</div>
-	
-					<div class="col-lg-5">
-						<div class="stats-right">
-							<div class="stats-right-item">
-								<p>Travel Joy</p>
-								<h4 id="travel-joy">12k</h4>
-								<i class="fas fa-users"></i>
+							<div class="types__card-title">
+								Desair Дезар-7 передвижной
 							</div>
-							<div class="stats-right-item">
-								<p>World Tours</p>
-								<h4 id="world-tours">15k</h4>
-								<i class="fas fa-clipboard-list"></i>
+							<div class="types__card-price">
+								600 EUR
 							</div>
-							<div class="stats-right-item">
-								<p>Citi Tours</p>
-								<h4 id="citi-tours">25k</h4>
-								<i class="fas fa-copy"></i>
+							<div class="types__card-description">
+								Для помещений, просто ставиться на пол, для семей больше 3-х человек
 							</div>
-						</div>
-					</div>
-	
-				</div>
-			</div>
-		</div> <!-- stats -->
-	</section>
-
-	<section id="gallery">
-		<div class="container-flex">
-			<div class="flex-center">
-
-				<div class="container">
-					<div class="gallery">
-						<div class="slider" id="photo">
-							<div class="slider-title"><h2>TOUR GALLERY</h2></div>
-							<div class="wrap">
-								<div class="slider-item fade">
-									<img src="img/slider/slider_1.jpg" alt="slider">
-								</div>
-								<div class="slider-item fade">
-									<img src="img/slider/slider_2.jpg" alt="slider">
-								</div>
-								<div class="slider-item fade">
-									<img src="img/slider/slider_3.jpg" alt="slider">
-								</div>
-								<div class="slider-item fade">
-									<img src="img/slider/slider_4.jpg" alt="slider">
-								</div>
-								<div class="slider-item fade">
-									<img src="img/slider/slider_5.jpg" alt="slider">
-								</div>
-								<div class="prev"><div class="arrow-left"></div></div>
-								<div class="next"><div class="arrow-right"></div></div>
+							<div class="types__card-button button button-togle"><span class="span-togle">характеристики</span></div>
+							<div class="types__card-option">
+								<ul>
+									<li>
+										<span>Бакт. эффективность:</span>
+										<strong>99, 90%</strong>
+									</li>
+									<li>
+										<span>Производительность:</span>
+										<strong>100±10 м3/час</strong>
+									</li>
+									<li>
+										<span>Бактерицидльная лампа:</span>
+										<strong>5×15 Вт</strong>
+									</li>
+									<li>
+										<span>Размеры:</span>
+										<strong>121×37×58 см</strong>
+									</li>
+									<li>
+										<span>Масса:</span>
+										<strong>10,5 кг</strong>
+									</li>
+									<li>
+										<span>Мощность:</span>
+										<strong>100 ВА</strong>
+									</li>
+								</ul>
 							</div>
-							<div class="slider-dots">
-								<div class="dot dot-active"></div>
-								<div class="dot"></div>
-								<div class="dot"></div>
-								<div class="dot"></div>
-								<div class="dot"></div>
+							<div class="types__card-button button open_modal"
+						 		data-action="first"
+						 		data-header="Desair Дезар-7 передвижной" 
+						 		data-val-to-send="Виды: Desair Дезар-7 передвижной"
+						 		data-target="3"
+								>Заказать
 							</div>
 						</div>
 					</div>
 				</div>
-
-			</div><!-- flex-center -->
-		</div><!-- container-flex -->
-	</section>
-	
-	<section id="prices">
-		<div class="prices">
-			<div class="container">
-				<div class="row justify-content-center">
-					<h2>TOUR PRICES</h2>
+				<div class="col-lg-4 col-md-6">
+					<div class="types__card card">
+						<div class="card__content types__card-content">
+							<div class="types__card-img">
+								<div class="parent">
+									<img class="lazy img-responsive example-img"
+										src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+										data-src="images/dest/elements/card/2.jpg"
+										data-srcset="images/dest/elements/card/2.jpg"
+										alt="Desair Дезар-5 настенный">
+								</div>
+							</div>
+							<div class="types__card-title">
+								Desair Дезар-5 настенный
+							</div>
+							<div class="types__card-price">
+								550 EUR
+							</div>
+							<div class="types__card-description">
+								Для помещений, крепиться на стену, для семей до 3-х человек
+							</div>
+							<div class="types__card-button button button-togle"><span class="span-togle">характеристики</span></div>
+							<div class="types__card-option">
+								<ul>
+									<li>
+										<span>Бакт. эффективность:</span>
+										<strong>99, 90%</strong>
+									</li>
+									<li>
+										<span>Производительность:</span>
+										<strong>100±10 м3/час</strong>
+									</li>
+									<li>
+										<span>Бактерицидльная лампа:</span>
+										<strong>5×15 Вт</strong>
+									</li>
+									<li>
+										<span>Размеры:</span>
+										<strong>89×37×14 см</strong>
+									</li>
+									<li>
+										<span>Масса:</span>
+										<strong>7,5 кг</strong>
+									</li>
+									<li>
+										<span>Мощность:</span>
+										<strong>100 ВА</strong>
+									</li>
+								</ul>
+							</div>
+							<div class="types__card-button button open_modal"
+						 		data-action="first"
+						 		data-header="Desair Дезар-5 настенный" 
+						 		data-val-to-send="Виды: Desair Дезар-5 настенный"
+						 		data-target="3"
+								>Заказать
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="row">
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="prices-block">
-							<h3>China</h3>
-							<div class="prices-block-item" style="background-image: url(img/p1.jpg);">
-								<div class="prices-block-item-price">$1000</div>
-								<div class="prices-block-item-button">
-									<h4>China</h4>
-									<button class="button more China-popup">Book Now</button>
+				<div class="col-lg-4 col-md-6">
+					<div class="types__card card">
+						<div class="card__content types__card-content">
+							<div class="types__card-img">
+								<div class="parent">
+									<img class="lazy img-responsive example-img"
+										src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+										data-src="images/dest/elements/card/3.jpg"
+										data-srcset="images/dest/elements/card/3.jpg"
+										alt="Desair Дезар автомобильный">
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="prices-block">
-							<h3>Malaysia</h3>
-							<div class="prices-block-item"style="background-image: url(img/p2.jpg);">
-								<div class="prices-block-item-price">$1300</div>
-								<div class="prices-block-item-button">
-									<h4>Malaysia</h4>
-									<button class="button more">Book Now</button>
-								</div>
+							<div class="types__card-title">
+								Desair Дезар автомобильный
 							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="prices-block">
-							<h3>Japan</h3>
-							<div class="prices-block-item"style="background-image: url(img/p3.jpg);">
-								<div class="prices-block-item-price">$1200</div>
-								<div class="prices-block-item-button">
-									<h4>Japan</h4>
-									<button class="button more">Book Now</button>
-								</div>
+							<div class="types__card-price">
+								321 EUR
 							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="prices-block">
-							<h3>Singapore</h3>
-							<div class="prices-block-item"style="background-image: url(img/p4.jpg);">
-								<div class="prices-block-item-price">$1300</div>
-								<div class="prices-block-item-button">
-									<h4>Singapore</h4>
-									<button class="button more">Book Now</button>
-								</div>
+							<div class="types__card-description">
+								Для салонов автомобилей
+							</div>
+							<div class="types__card-button button button-togle"><span class="span-togle">характеристики</span></div>
+							<div class="types__card-option">
+								<ul>
+									<li>
+										<span>Бакт. эффективность:</span>
+										<strong>99, 90%</strong>
+									</li>
+									<li>
+										<span>Производительность:</span>
+										<strong>20±4 м3/час</strong>
+									</li>
+									<li>
+										<span>Бактерицидльная лампа:</span>
+										<strong>1×16 Вт</strong>
+									</li>
+									<li>
+										<span>Размеры:</span>
+										<strong>41×15×11 см</strong>
+									</li>
+									<li>
+										<span>Масса:</span>
+										<strong>3 кг</strong>
+									</li>
+									<li>
+										<span>Мощность:</span>
+										<strong>30 ВА</strong>
+									</li>
+									<li>
+										<span>Напряжение питания:</span>
+										<strong>12В±10%</strong>
+									</li>
+								</ul>
+							</div>
+							<div class="types__card-button button open_modal"
+						 		data-action="first"
+						 		data-header="Desair Дезар автомобильный" 
+						 		data-val-to-send="Виды: Desair Дезар автомобильный"
+						 		data-target="3"
+								>Заказать
 							</div>
 						</div>
 					</div>
@@ -348,183 +440,428 @@
 			</div>
 		</div>
 	</section>
-	
-<!-- 	<section id="reviews">
-	<div class="reviews">
+
+	<!-- Как закзать? -->
+	<section class="how-to-order">
 		<div class="container">
 			<div class="row justify-content-center">
-				<h2>CLIENT REVIEWS</h2>
-				<div class="row justify-content-between">
-					<div class="col-lg-4">
-						<div class="reviews-block">
-							<span id="name-user">Lorem Lorem</span>
-							<p id="reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quidem, ea eaque, distinctio ab delectus!</p>
+				<h3 class="text-center title-h3 how-to-order__title">Как закзать?</h3>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-4 col-md-6">
+					<div class="how-to-order__card card card_1">
+						<div class="card__content how-to-order__content">
+							<div class="how-to-order__content-img">
+								<img src="images/svg/comp.svg" alt="Заявка" class="img-responsive">
+							</div>
+							<div class="how-to-order__content-title text-center">
+								Заявка
+							</div>
+							<div class="how-to-order__content-description text-center">
+								Оставьте заявку на сайте.
+							</div>
+							<div class="how-to-order__content-button button open_modal"
+						 		data-action="first"
+						 		data-val-to-send="Оставить заявку в блоке как закзать?"
+						 		data-target="4"
+								>Оставить заявку
+							</div>
 						</div>
 					</div>
-					<div class="col-lg-4">
-						<div class="reviews-block">
-							<span id="name-user">Lorem Lorem</span>
-							<p id="reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo veniam tenetur, reiciendis dolores qui distinctio.</p>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="how-to-order__card card card_2">
+						<div class="card__content how-to-order__content">
+							<div class="how-to-order__content-img">
+								<img src="images/svg/phone.svg" alt="Консультация и оформление заказа" class="img-responsive">
+							</div>
+							<div class="how-to-order__content-title text-center">
+								Консультация и оформление заказа
+							</div>
+							<div class="how-to-order__content-description text-center">
+								Наш менеджер согласует с Вами необходимый вид дезинфектора и оформит заказ.
+							</div>
 						</div>
 					</div>
-					<div class="col-lg-4">
-						<div class="reviews-block">
-							<span id="name-user">Lorem Lorem</span>
-							<p id="reviews-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, distinctio? Aliquam, voluptas. Aspernatur, quaerat consequatur.</p>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="how-to-order__card card card_3">
+						<div class="card__content how-to-order__content">
+							<div class="how-to-order__content-img">
+								<img src="images/svg/kartonnye-korobki.svg" alt="Консультация и оформление заказа" class="img-responsive">
+							</div>
+							<div class="how-to-order__content-title text-center">
+								Доставка
+							</div>
+							<div class="how-to-order__content-description text-center">
+								Мы доставим его с помощью бесконтактной доставки.
+							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Кто уже использует дезинфекторы DESAIR? -->
+	<section class="who-uses" id="who-uses">
+		<div class="container">
+			<div class="row justify-content-center">
+				<h3 class="text-center title-h3 who-uses__title">Кто уже использует дезинфекторы DESAIR?</h3>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+					<div class="who-uses__slider">
+						<div class="who-uses__slider-item">
+							<div class="parent">
+								<img class="lazy img-responsive example-img"
+									src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+									data-src="images/dest/galery/1.jpg"
+									data-srcset="images/dest/galery/1.jpg"
+									alt="Президент России">
+							</div>
+							<div class="slider__title">
+								Президент России
+							</div>
+						</div>
+						<div class="who-uses__slider-item">
+							<div class="parent">
+								<img class="lazy img-responsive example-img"
+									src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+									data-src="images/dest/galery/2.jpg"
+									data-srcset="images/dest/galery/2.jpg"
+									alt="Президент России">
+							</div>
+							<div class="slider__title">
+								Президент России
+							</div>
+						</div>
+						<div class="who-uses__slider-item">
+							<div class="parent">
+								<img class="lazy img-responsive example-img"
+									src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+									data-src="images/dest/galery/3.jpg"
+									data-srcset="images/dest/galery/3.jpg"
+									alt="Президент России">
+							</div>
+							<div class="slider__title">
+								Президент России
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ -->
+	<section class="faq" id="faq" style="background-image: url(images/dest/faq.jpg);">
+		<div class="container">
+			<div class="row justify-content-center">
+				<h3 class="text-center title-h3 faq__title">FAQ</h3>
+			</div>
+			<div class="row">
+				<div class="faq__items">
+					<div class="faq__items-item accardion">
+						<div class="accardion__header">
+							<span>Предоставляется ли гарантия?</span>
+							<div class="triger">
+								<i class="fas fa-angle-down triger_first"></i>
+								<i class="fas fa-angle-up triger_second"></i>
+							</div>
+						</div>
+						<div class="accardion__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolor!
+						</div>
+					</div>
+					<div class="faq__items-item accardion">
+						<div class="accardion__header">
+							<span>Можно ли потом купить сменые комплектующие?</span>
+							<div class="triger">
+								<i class="fas fa-angle-down triger_first"></i>
+								<i class="fas fa-angle-up triger_second"></i>
+							</div>
+						</div>
+						<div class="accardion__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolor!
+						</div>
+					</div>
+					<div class="faq__items-item accardion">
+						<div class="accardion__header">
+							<span>Точно ли прибор очищает воздух от короновируса?</span>
+							<div class="triger">
+								<i class="fas fa-angle-down triger_first"></i>
+								<i class="fas fa-angle-up triger_second"></i>
+							</div>
+						</div>
+						<div class="accardion__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolor!
+						</div>
+					</div>
+					<div class="faq__items-item accardion">
+						<div class="accardion__header">
+							<span>Не вреден ли он для здоровья?</span>
+							<div class="triger">
+								<i class="fas fa-angle-down triger_first"></i>
+								<i class="fas fa-angle-up triger_second"></i>
+							</div>
+						</div>
+						<div class="accardion__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolor!
+						</div>
+					</div>
+					<div class="faq__items-item accardion">
+						<div class="accardion__header">
+							<span>Где можно посмотреть прибор?</span>
+							<div class="triger">
+								<i class="fas fa-angle-down triger_first"></i>
+								<i class="fas fa-angle-up triger_second"></i>
+							</div>
+						</div>
+						<div class="accardion__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolor!
+						</div>
+					</div>
+					<div class="faq__items-item accardion">
+						<div class="accardion__header">
+							<span>Шумит ли онпри работе?</span>
+							<div class="triger">
+								<i class="fas fa-angle-down triger_first"></i>
+								<i class="fas fa-angle-up triger_second"></i>
+							</div>
+						</div>
+						<div class="accardion__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolor!
+						</div>
+					</div>
+					<div class="faq__items-item accardion">
+						<div class="accardion__header">
+							<span>Не вреден ли он для здоровья?</span>
+							<div class="triger">
+								<i class="fas fa-angle-down triger_first"></i>
+								<i class="fas fa-angle-up triger_second"></i>
+							</div>
+						</div>
+						<div class="accardion__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolor!
+						</div>
+					</div>
+					<div class="faq__items-item accardion">
+						<div class="accardion__header">
+							<span>Какой у него уровень электропотребления?</span>
+							<div class="triger">
+								<i class="fas fa-angle-down triger_first"></i>
+								<i class="fas fa-angle-up triger_second"></i>
+							</div>
+						</div>
+						<div class="accardion__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolor!
+						</div>
+					</div>
+					<div class="faq__items-item accardion">
+						<div class="accardion__header">
+							<span>Как осуществляется доставка?</span>
+							<div class="triger">
+								<i class="fas fa-angle-down triger_first"></i>
+								<i class="fas fa-angle-up triger_second"></i>
+							</div>
+						</div>
+						<div class="accardion__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolor!
+						</div>
+					</div>
+					<div class="faq__items-item accardion">
+						<div class="accardion__header">
+							<span>Какой срок службы?</span>
+							<div class="triger">
+								<i class="fas fa-angle-down triger_first"></i>
+								<i class="fas fa-angle-up triger_second"></i>
+							</div>
+						</div>
+						<div class="accardion__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolor!
+						</div>
+					</div>
+					<div class="faq__items-item accardion">
+						<div class="accardion__header">
+							<span>Где он производиться?</span>
+							<div class="triger">
+								<i class="fas fa-angle-down triger_first"></i>
+								<i class="fas fa-angle-up triger_second"></i>
+							</div>
+						</div>
+						<div class="accardion__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, dolor!
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Отзывы -->
+	<section class="reviews" id="reviews">
+		<div class="container">
+			<div class="row justify-content-center">
+				<h3 class="text-center title-h3 reviews__title">Отзывы</h3>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+					<div class="reviews__slider">
+					    <div class="reviews__slider-item">
+					        <div class="card">
+					            <div class="card__content">
+					                <div class="name">Виталий Ерофеенко</div>
+					                <div class="text">
+					                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisююб.nisi.ut.aliquip ex ea commodo consequat.</p>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="reviews__slider-item">
+					        <div class="card">
+					            <div class="card__content">
+					                <div class="name">Виталий Ерофеенко</div>
+					                <div class="text">
+					                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisююб.nisi.ut.aliquip ex ea commodo consequat.</p>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="reviews__slider-item">
+					        <div class="card">
+					            <div class="card__content">
+					                <div class="name">Виталий Ерофеенко</div>
+					                <div class="text">
+					                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisююб.nisi.ut.aliquip ex ea commodo consequat.</p>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="reviews__slider-item">
+					        <div class="card">
+					            <div class="card__content">
+					                <div class="name">Виталий Ерофеенко</div>
+					                <div class="text">
+					                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisююб.nisi.ut.aliquip ex ea commodo consequat.</p>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Форма -->
+	<div class="container">
+		<div class="main-form">
+			<h3 class="title-h3 main-form__title">Остались вопросы?</h3>
+			<span class="main-form__description">Оставьте заявку и наши специалисты с удовольствием на них ответят.</span>
+			<form action="#">
+				<div class="form-control">
+					<input id="main-form__name" type="text" name="name" placeholder="Как вас зовут?" required>
+					<label for="main-form__name">Как вас зовут?</label>
+				</div>
+				<div class="form-control">
+					<input id="main-form__phone" type="text" name="phone" placeholder="Введите контактный телефон" required>
+					<label for="main-form__phone">Введите контактный телефон</label>
+				</div>
+				<div class="button main-form__button">Оставить заявку</div>
+			</form>
+			<div class="main-form__img">
+				<img src="images/dest/elements/diz.png" alt="diz" class="img-responsive">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	
+</main>
+
+<footer>
+	<div class="container">
+		<div class="row justify-content-between align-items-lg-center">
+			<div class="col-lg-4 col-md-6">
+				<div class="logo">
+					<img src="images/spray.png" alt="logo">
+					<span>Ультрафиолетовые дизенфекторы <br>воздуха в Испании</span>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="footer__com">
+					<div class="communication footer__communication">
+						<div class="mesengers">
+							<a href="#" class="viber">
+								<i class="fab fa-viber"></i>
+							</a>
+							<a href="#" class="whatsapp">
+								<i class="fab fa-whatsapp"></i>
+							</a>
+							<a href="#" class="telegram">
+								<i class="fab fa-telegram-plane"></i>
+							</a>
+						</div>
+					</div>
+					<div class="contact">
+						<div class="tel">
+							<a href="tel:#">+8 (000) 000 00 00</a>
+						</div>
+						<div class="email">
+							<a href="mailto:#">test@gmail.ru</a>
+						</div>
+					</div>
+				</div>
+				<div class="link">
+					<a class="open_modal"
+						data-action="first"
+						data-val-to-send="Форма: Связаться с сервисной службой"
+						data-target="6"
+					><i class="fas fa-cogs"></i>Связаться с сервисной службой</a>
 				</div>
 			</div>
 		</div>
 	</div>
-</section> -->
-	
-	<section id="getInTouch">
-		<div class="getInTouch">
-			<div class="container">
-	
-				<div class="row">
-					<div class="col-lg">
-						<h2>GET IN TOUCH WITH US</h2>
-					</div>
-				</div>
-	
-				<div class="row justify-content-around">
-					<div class="col-lg-3 col-md-3">
-						<div class="getInTouch-box">
-							<i class="fas fa-map-marker-alt"></i>
-							<h3>Location</h3>
-							<span>The company name</span>
-							<span>Addison Township, IL, USA.</span>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3">
-						<div class="getInTouch-box">
-							<i class="far fa-envelope-open"></i>
-							<h3>Phone & Email</h3>
-							<span>+(122) 123 456 7890</span>
-							<span>info@examplemail.com</span>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3">
-						<div class="getInTouch-box">
-							<i class="fas fa-building"></i>
-							<h3>Our Branches</h3>
-							<span>India</span>
-							<span>China</span>
-						</div>
-					</div>
-				</div>
-	
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="getInTouch-form">
-							<form id="form">
-								<input type="text" name="name" placeholder="Name">
-								<input type="text" name="email" placeholder="Email">
-								<input type="phone" name="phone" placeholder="Phone">
-								<textarea name="mesaje" cols="30" rows="10" placeholder="Message"></textarea>
-								<button type="submit" class="button">Send</button>
-							</form>
-						</div>
-					</div>
-					<div class="col-lg-5 getInTouch-img">
-						<img class="img-responsive" src="img/c1.jpg" alt="send">
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<div class="popups">
-		<div class="overlay fade">
-			<div class="popup">
-				<div class="popup-close">&times;</div>
-				<div class="popup-title">China</div>
-				<div class="popup-form" style="background-image: url(img/popup/hong-kong.jpg);">
-					<form action="#" class="China-form">
-						<div class="popup-form-header">
-							Learn more about your holiday.
-						</div>
-						<label class="popup-form__label" for="phone">
-							Enter your phone number:
-						</label>
-						<input class="popup-form__input" name="China" type="tel" required placeholder="+7(978) 973 33 45">
-						<button class="button popup-form__btn">Submit your application</button>
-					</form>
-				</div>
-			</div>
-		</div>
-		
-		<div class="overlay fade">
-			<div class="popup">
-				<div class="popup-close">&times;</div>
-				<div class="popup-title">Malaysia</div>
-				<div class="popup-form" style="background-image: url(img/popup/kuala-lumpur.jpg);">
-					<form action="#" class="Malaysia-form">
-						<div class="popup-form-header">
-							Learn more about your holiday.
-						</div>
-						<label class="popup-form__label" for="phone">
-							Enter your phone number:
-						</label>
-						<input class="popup-form__input" name="Malaysia" type="tel" required placeholder="+7(978) 973 33 45">
-						<button class="button popup-form__btn">
-						Оставить заявку!
-						</button>
-					</form>
-				</div>
-			</div>
-		</div>
-		
-		<div class="overlay fade">
-			<div class="popup">
-				<div class="popup-close">&times;</div>
-				<div class="popup-title">Japan</div>
-				<div class="popup-form" style="background-image: url(img/popup/mount-fuji.jpg);">
-					<form action="#" class="Japan-form">
-						<div class="popup-form-header">
-							Learn more about your holiday.
-						</div>
-						<label class="popup-form__label" for="phone">
-							Enter your phone number:
-						</label>
-						<input class="popup-form__input" name="Japan" type="tel" required placeholder="+7(978) 973 33 45">
-						<button class="button popup-form__btn">
-						Оставить заявку!
-						</button>
-					</form>
-				</div>
-			</div>
-		</div>
-		
-		<div class="overlay fade">
-			<div class="popup">
-				<div class="popup-close">&times;</div>
-				<div class="popup-title">Singapore</div>
-				<div class="popup-form" style="background-image: url(img/popup/singapore.jpg);">
-					<form action="#" class="Singapore-form">
-						<div class="popup-form-header">
-							Learn more about your holiday.
-						</div>
-						<label class="popup-form__label" for="phone">
-							Enter your phone number:
-						</label>
-						<input class="popup-form__input" name="Singapore" type="tel" required placeholder="+7(978) 973 33 45">
-						<button class="button popup-form__btn">
-						Оставить заявку!
-						</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
+</footer>
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-<script src="js/scripts.min.js"></script>
+<!-- modal -->
+<div class="modal-overlay">
+    <div class="modal" data-target="first">
+    <div class="close-modal closeModal">✖</div><!-- close modal -->
+        <div class="modal-content">
+        	<h3 class="modal-title"></h3>
+            <div class="modal-form">
+				<form action="javascript:void(null);">
+					<span>Оставьте свои данные, и мы Вам перезвоним</span>
+						<div class="form-control">
+						    <input type="text" name="name" id="modal-form__name" placeholder="Ваше имя">
+						    <label for="modal-form__name">Ваше имя</label>
+						</div>
+						<div class="form-control">
+						    <input type="text" name="phone" id="modal-form__phone" placeholder="Ваш номер телефона" required>
+						    <label for="modal-form__phone">Ваш номер телефона</label>
+						</div>
+						<input class="button modal-form__button" type="submit" value="Оставить заявку">
+						<div class="input-info"></div>
 
+				</form>
+			</div>
+        </div><!-- content -->
+    </div><!-- modal -->
+
+    <div class="modal" data-target="second">
+        <div class="close-modal closeModal">✖</div><!-- close modal -->
+        <div class="modal-content Modal_Head">
+            <h3>Some content here</h3>
+
+        </div><!-- content -->
+    </div><!-- modal -->
+                    
+</div><!-- overlay -->
+
+	<script src="js/app.min.js"></script>
 
 </body>
 </html>

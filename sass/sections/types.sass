@@ -1,0 +1,82 @@
+.types
+	position: relative
+	background-color: #f0f8fa
+	padding-top: 100px
+	padding-bottom: 100px
+	&__title
+		padding-bottom: 100px 
+	&__card
+		margin-bottom: 20px
+		&-content
+			display: flex
+			flex-direction: column
+			align-items: center
+			justify-content: center 
+		&-img 
+			height: 250px
+			position: relative
+			overflow: hidden
+			img 
+				height: 250px
+		&-title 
+			font-size: 20px
+			font-weight: 700
+			line-height: 46px
+			text-align: center
+		&-price 
+			margin-top: 15px
+			font-size: 18px
+			line-height: 18px
+			font-weight: 800
+			text-transform: uppercase
+			color: $accent
+			border: 1px solid #1a9ebe
+			border-radius: 5px
+			padding: 10px 15px
+		&-description
+			margin-top: 15px
+			font-size: 15px
+			font-weight: 700
+			line-height: 24px
+			text-align: center 
+		&-option
+			margin-top: 10px
+			width: 100%
+			background-color: #fff
+			display: block
+			z-index: 2
+			ul 
+				list-style: none
+				margin: 0
+				padding: 0
+				li 
+					width: 100%
+					display: flex
+					justify-content: space-between 
+					strong 
+						text-align: right
+						white-space: nowrap
+		&-button
+			margin-top: 15px
+			width: 90% 
+
+//Small: ≥576px
++media-breakpoint-down(sm)
+	.types 
+		padding-top: 50px
+		padding-bottom: 50px
+		&__title
+			padding-bottom: 30px 
+		&__card 
+			&-title
+				line-height: 30px 
+
+			&-option
+				display: none
+				opacity: 0
+				transition: 0.5s ease all
+				transform: translate(0, 100%)
+				&.active
+					display: block
+					opacity: 1
+					transform: translate(0, 0%)

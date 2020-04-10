@@ -1,0 +1,97 @@
+// USER VARIABLES SECTION
+
+$accent: #1a9ebe // Accent Color
+$fontsize: 15px // Body Font Size
+$textcolor: #333 // Text Color
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$gilroy: Gilroy, sans-serif
+$myriad: MyriadPro, sans-serif
+
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 20px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import '../libs/Chart.min.css'
+@import "../libs/all.min.css"
+@import "../css/slick.css" 
+@import "../css/slick-theme.css"  
+
+
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		font-display: swap // Uncomment to initially display system fonts
+		src: local($fname), url($furl) format('woff2')
+
+@include font('Gilroy', normal, 800, '../fonts/Gilroy-ExtraBold.woff2')
+@include font('Gilroy', normal, 700, '../fonts/Gilroy-Bold.woff2')
+@include font('Gilroy', normal, 600, '../fonts/Gilroy-SemiBold.woff2')
+@include font('Gilroy', normal, 500, '../fonts/Gilroy-Medium.woff2')
+@include font('Gilroy', normal, 400, '../fonts/Gilroy-Regular.woff2')
+@include font('MyriadPro', normal, 400, '../fonts/MyriadPro-Regular.woff2')
+
+@include font('Font Awesome 5 Brands', normal, 400, '../fonts/fa-brands-400.woff2')
+@include font('Font Awesome 5 Free', normal, 400, '../fonts/fa-regular-400.woff2')
+@include font('Font Awesome 5 Free', normal, 400, '../fonts/fa-solid-900.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $gilroy
+	font-size: $fontsize
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	overflow-x: hidden
+	color: $textcolor
+
+@import '_oll.sass'
+
+//elements
+@import 'elements/logo.sass'
+@import 'elements/button.sass'
+@import 'elements/communication.sass'
+@import 'elements/form.sass'
+@import 'elements/card.sass'
+@import 'elements/modal.sass'
+
+//sections
+@import 'sections/header.sass'
+@import 'sections/graf.sass'
+@import 'sections/principle.sass'
+@import 'sections/how-it-works.sass'
+@import 'sections/certificates.sass'
+@import 'sections/types.sass'
+@import 'sections/how-to-order.sass'
+@import 'sections/who-uses.sass'
+@import 'sections/faq.sass'
+@import 'sections/reviews.sass'
+@import 'sections/main-form.sass'
+@import 'sections/footer.sass'

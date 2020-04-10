@@ -1,0 +1,29 @@
+.graf
+	background-color: #f0f8fa
+	padding-top: 200px
+	padding-bottom: 100px
+	&__title
+		padding-bottom: 50px
+	&__card
+		h4 
+			font-size: 22px
+			font-weight: 700
+	&__content
+		display: flex
+		flex-direction: column
+		justify-content: center
+
+//Small: ≥576px
++media-breakpoint-down(sm)
+	.graf
+		&__title
+		&__card
+			margin-top: 15px
++media-breakpoint-down(md)
+	.graf
+		padding-top: 160px
+		padding-bottom: 50px
+		&__title
+			padding-bottom: 30px
+
+

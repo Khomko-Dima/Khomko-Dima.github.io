@@ -1,0 +1,268 @@
+.header 
+	position: relative
+	background-size: cover
+	background-repeat: no-repeat
+	min-height: 700px
+	width: 100%
+	&:after,
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+	&:after
+		bottom: 0
+		background-color: rgba(255, 255, 255, 0.75)
+	&:before
+		min-height: 130px
+		background-image: linear-gradient(to bottom, #ffffff, #ffffff, #ffffff, #ffffff, rgba(255, 255, 255, 0.1))
+	>*
+		position: relative
+		z-index: 3
+	.top-info
+		display: flex
+		justify-content: space-between
+		padding-top: 15px
+		padding-bottom: 15px
+		.right
+			display: flex
+			align-items: center
+	&__communication
+		.communication
+			margin-right: 15px
+			&__header 
+			&__mesengers 
+			&__contact
+				margin-right: 50px
+	&__slogan
+		margin-top: 160px
+		width: 60%
+		h1 
+			font-size: 33px
+			line-height: 49px
+			font-weight: 600
+		h2 
+			font-size: 18px
+			font-weight: 500
+			line-height: 49px
+	&__form
+		position: absolute
+		bottom: -160px
+
+.menu
+	margin-top: 15px
+	width: 100%
+	overflow: hidden
+	ul 
+		margin: 0
+		padding: 0
+		list-style: none
+		display: flex
+		li 
+			margin-right: 30px
+			padding: 10px
+			position: relative
+			display: block
+			&:first-child
+				padding-left: 0
+				a 
+					padding-left: 0
+			&:last-child
+				margin-right: 0
+			&:before,
+			&:after
+				content: ''
+				position: absolute
+				bottom: 0
+				background-color: $accent
+				height: 2px
+				width: 0
+				transition: 0.5s ease all
+			&:before
+				left: 0
+			&:after
+				right: 0
+			&:hover
+				&:before,
+				&:after
+					width: 50%
+			a 
+				cursor: pointer
+				text-decoration: none
+				color: #111
+				font-size: 14px
+				font-weight: 500
+				padding: 10px
+				white-space: nowrap
+	
+.image
+	position: absolute
+	top: 65%
+	right: 10%
+	transform: translateY(-65%)
+	img
+		z-index: 2
+		position: relative
+	span 
+		border: 1px solid #f3f1f1
+		border-radius: 50%
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		z-index: 1
+		&:nth-child(2)
+			width: 200px
+			height: 200px
+		&:nth-child(3)
+			width: 300px
+			height: 300px
+		&:nth-child(4)
+			width: 400px
+			height: 400px
+.navBurger 
+    position: absolute
+    right: 20px
+    top: 10px
+    cursor: pointer
+    background: $accent
+    z-index: 6
+    box-sizing: border-box
+    background-clip: content-box
+    width: 30px
+    height: 24px
+    border-top: 11px solid transparent
+    border-bottom: 11px solid transparent
+    transform: rotate(0deg)
+    transition: all 0.25s ease-in-out
+    display: none
+    &:before,
+    &:after 
+        content: ""
+        position: absolute
+        background: $accent
+        height: 2px
+        width: 100%
+        right: 0
+        will-change: rotate
+        transform: rotate(0deg)
+        transition: all 0.5s ease
+    &:before 
+        top: -10px
+    &:after 
+        bottom: -10px
+        width: 100%
+    &.active 
+        background: transparent
+        background-clip: content-box
+    &.active:before
+        transform: rotate(135deg)
+        top: 0
+        background: $accent
+        width: 110%
+    &.active:after 
+        bottom: 0
+        transform: rotate(-135deg)
+        background: $accent
+        width: 110%
+				
+
+//Extra large: ≥1200px
++media-breakpoint-down(xl)
+
+//Large: ≥992px
++media-breakpoint-down(lg)
+	.header__slogan
+		margin-top: 60px
+//Medium: ≥768px
++media-breakpoint-down(md)
+	.header .top-info
+		flex-wrap: wrap
+		.right
+			margin-top: 15px
+			flex-basis: 100%
+			justify-content: space-between
+	.header__slogan
+		width: 80%
+	.header .image
+		width: 250px
+		right: 0
+		span 
+			display: none
+	.menu ul li
+		margin-right: 10px
+//Small: ≥576px
++media-breakpoint-down(sm)
+	.navBurger
+		display: block
+	.header__slogan
+		h1
+			font-size: 28px
+			line-height: 35px
+		h2 
+			margin-top: 15px
+			line-height: 25px
+	.menu
+			position: fixed
+			margin-top: 0
+			top: 0
+			left: 0
+			right: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 5
+			background-color: #fff
+			display: none
+			overflow: hidden
+			overflow-y: scroll
+			ul 
+				flex-direction: column
+				margin-top: 50px
+				li 
+					border-bottom: 1px solid rgba(76, 76, 76, 0.2)
+					margin-right: 0
+					padding-top: 15px
+					padding-bottom: 15px
+					a 
+						font-size: 18px
+						padding-top: 15px
+						padding-bottom: 15px
+						color: $textcolor
+	.menu ul li:first-child 
+		padding-left: 10px
+		a 
+			padding-left: 10px
+	.header .image
+		display: none
+	.header__slogan
+		width: 100%
+	.header__form
+		bottom: -120px
+//Extra small: >0
++media-breakpoint-down(xs)
+	.header 
+		.top-info .right
+			flex-wrap: wrap
+			justify-content: center
+		.button 
+			margin-top: 15px
+	.header__form
+		width: 100%
+		left: 0 !important
+	.header__slogan
+		margin-top: 15px
+		text-align: center
+	.header__communication
+		.communication
+			margin-right: 50px
+			&__contact
+				margin-right: 0
+@media (max-width: 430px)
+	.header__form
+		bottom: -180px
+@media (max-width: 350px)
+	.header__form
+		bottom: -230px
+
