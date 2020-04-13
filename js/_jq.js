@@ -32,13 +32,13 @@ document.addEventListener("DOMContentLoaded", function() {
 		speed: 300,
 		arrows: true,
 		slidesToShow: 3,
-		slidesToScroll: 1,
+		slidesToScroll: 3,
 		responsive: [
 			{
 			  breakpoint: 810,
 			  settings: {
 			    slidesToShow: 2,
-			    slidesToScroll: 1,
+			    slidesToScroll: 2,
 			    infinite: false,
 			    dots: true
 			  }
