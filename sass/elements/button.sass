@@ -1,0 +1,53 @@
+.button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: #d7747a
+	padding: 15px 45px
+	padding-bottom: 18px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 30px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	z-index: 2
+	>*
+		position: relative
+		z-index: 2
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		z-index: 0
+		border-radius: 30px
+		content: ''
+		height: 100%
+		bottom: 3px
+		width: 100%
+		background-color: $accent
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten(#d7747a, 10%)
+	&:active
+		background-color: darken($accent, 5%)
+		span 
+			pointer-events: none
+	&.white
+		color: #1f1d1d
+		background-color: #ebeaea
+		&::after
+			background-color: #fefcfb
+		&:focus, &:hover
+			color: #1f1d1d
+		&:hover
+			background-color: darken(#ebeaea, 10%)
+		&:active
+			background-color: darken(#fefcfb, 5%)

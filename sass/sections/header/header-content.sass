@@ -1,0 +1,93 @@
+.header
+	&-content
+		margin-top: 15vh
+		&__title
+			h1
+				font-size: 48px
+				line-height: 55px
+				font-weight: 300
+		&__list
+			ul 
+				list-style: none
+				margin: 0
+				padding: 0
+				li 
+					position: relative
+					padding-left: 30px
+					font-size: 18px
+					line-height: 36px
+					letter-spacing: 0.45px
+					&:before
+						position: absolute
+						content: ''
+						left: 0
+						top: 50%
+						transform: translateY(-50%)
+						width: 17px
+						height: 17px
+						box-shadow: 0 1px 13px rgba(239, 148, 153, 0.38)
+						border: 4px solid #f7f7fb
+						background-color: #ef9499
+						border-radius: 50%
+		&__button
+			margin-top: 30px
+			.button 
+				padding-right: 150px
+				padding-top: 10px
+				padding-bottom: 13px
+				span
+					font-size: 14px
+					line-height: 12px
+					font-weight: 400
+					letter-spacing: 1.68px
+					text-shadow: 0 1px 5px rgba(210, 110, 116, 0.49)
+				&:before
+					content: ''
+					position: absolute
+					top: 0
+					right: -65px
+					width: 209px
+					height: 60px
+					z-index: 4
+					background-image: url('/images/dest/header/Branch.png')
+					background-size: cover
+					background-position: center
+//Large: ≥992px
++media-breakpoint-down(lg)
+	.header
+		&-content
+			background-color: rgba(255, 255, 255, 0.7)
+			padding: 10px
+			border-radius: 10px
+//Medium: ≥768px
++media-breakpoint-down(md)
+	.header
+		&-content
+			&__title
+				h1
+					font-size: 28px
+					line-height: 35px
+//Small: ≥576px
++media-breakpoint-down(sm)
+	.header
+		&-content
+			margin-top: 10vh
+			&__title
+				text-align: center
+			&__list
+				margin-top: 15px
+				ul 
+					li 
+						padding-left: 30px
+						font-size: 18px
+						line-height: 26px
+						letter-spacing: 0.45px
+			&__button
+				.button 
+					&:before
+						top: 15px
+//Extra small: >0
++media-breakpoint-down(xs)
+	.header
+		&-content
+			margin-top: 2vh

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Pincet</title>
+	<meta name="description" content="Paradigma-test">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/app.min.css">
+
+</head>
+
+<body>
+<div class="navBurger" role="navigation" id="navToggle"></div>
+	<header class="header" style="background-image: url(images/dest/header/fon.png);">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="header-top">
+						<div class="header-top__logo">
+							<img class="img-responsive" src="images/dest/header/logo.png" alt="pincet">
+							<span>Студия депиляции и массажный кабинет в Бресте</span>
+						</div>
+						<div class="header-top__plase">
+							<div class="map">
+								<img class="img-responsive" src="images/dest/header/map.png" alt="map">
+							</div>
+							<div class="plase">
+								<span><strong>Мы находимся в центре:</strong> <br>
+								г. Брест, ул. Гоголя, д.65</span>
+								<a href="https://yandex.by/maps/-/CCQh6Ze5wB" target="_blank" class="shou-map">Смотреть на карте</a>
+								<div class="plase-map">
+								</div>
+							</div>
+						</div>
+						<div class="header-top__info">
+							<div class="time-info">
+								<span>Звоните, мы сейчас работаем</span>
+							</div>
+							<div class="phone">
+								<i class="fas fa-phone-alt"></i> <a href="tel:+375333822499">+375 33 382 24 99</a>
+							</div>
+							<div class="time">
+								<i class="far fa-clock"></i> <span>Пн-Вс <strong>9:00-21:00</strong></span>
+							</div>
+						</div>
+						<div class="header-top__button">
+							<div class="button white open_modal"
+								data-action="first"
+								data-modal="calc"
+								data-header="Записаться онлайн"
+								data-desc="Lorem ipsum dolor sit."
+								data-val-to-send="Записаться онлайн"
+								data-input="Записаться">
+								<i class="far fa-calendar-alt"></i> <span>Записаться онлайн</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<nav class="menu">
+						<ul>
+							<li><a href="#">Главная</a></li>
+							<li><a href="#">Шугаринг и депиляция воском</a></li>
+							<li><a href="#">Антицеллюлитный массаж</a></li>
+							<li><a href="#">Классический массаж</a></li>
+							<li><a href="#">Обучение</a></li>
+							<li><a href="#">Косметика для мастеров</a></li>
+							<li><a href="#">Статьи</a></li>
+							<li><a href="#">О студии</a></li>
+							<li><a href="#">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-6 offset-lg-1 col-lg-8">
+					<div class="header-content">
+						<div class="header-content__title">
+							<h1>Хотите избавиться от <strong>нежелательных волос</strong><br> или нужен сеанс<br> <strong>антицеллюлитного массажа?</strong></h1>
+						</div>
+						<div class="header-content__list">
+							<ul>
+								<li>депиляция воском и Шугаринг;</li>
+								<li>профессиональные сертифицированные мастера;</li>
+								<li>работаем и с женщинами, и с мужчинами;</li>
+								<li>результат уже после первой процедуры.</li>
+							</ul>
+						</div>
+						<div class="header-content__button">
+							<div 
+								class="button open_modal"
+								data-action="first"
+								data-header="<strong>Получите</strong> программу обучения"
+								data-desc="Lorem ipsum dolor sit."
+								data-val-to-send="ПОЛУЧИТЬ КАРТУ"
+								data-input="Получить программу">
+								<span>ПОЛУЧИТЬ КАРТУ <br>КЛИЕНТА БЕСПЛАТНО</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-cart">
+			<img class="header-cart__img" src="images/dest/header/cart.png" alt="">
+			<div class="circl">
+				<div class="circl-img">
+					<img src="images/dest/svg/circl.svg" alt="">
+				</div>
+				<div class="circl-fill">
+					<span></span>
+					<span></span>
+					<span data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique autem, necessitatibus illo non consequuntur laudantium."></span>
+				</div>
+			</div>
+		</div>
+		<div class="header-move">
+			<div class="header-move__item">
+				<div class="down">
+					<i class="fas fa-angle-down"></i>
+				</div>
+			</div>
+			<div class="header-move__line"></div>
+			<div class="header-move__circl">
+				<span></span>
+			</div>
+			<div class="header-move__fill">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<div class="paralax-item first" data-speed="50"></div>
+		<div class="paralax-item second" data-speed="40"></div>
+		<div class="paralax-item third"data-speed="20"></div>
+	</header>
+<button  
+	id="button_senks" 
+	class="open_modal" 
+	data-action="senks"
+	style="display: none;" 
+	>Click For Modal
+</button>
+<div class="modal-overlay">
+    <div class="modal" data-target="first">
+    	<a class="close-modal">✖</a><!-- close modal -->
+        <div class="modal-content">
+        	<div class="modal-title">
+        		<h3><strong>Получите</strong> программу обучения</h3>
+            	<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam illo ut repellat tempora, sequi vitae!</h4>
+        	</div>
+            <div class="modal-form">
+				<form action="javascript:void(null);">
+					<div class="form-control">
+						<input type="text" name="kvol" id="modal-form__kvol" placeholder="Повыешенмие квалификации" disabled value="">
+						<div class="chose-select">
+					    	<div class="iti-arrow"></div>
+					    </div>
+					    <ul class="dropdown-select">
+							<li data-country="1">lorem1</li>
+							<li data-country="2">lorem2</li>
+							<li data-country="3">lorem3</li>
+						</ul>
+					</div>
+					<div class="form-control">
+					    <input type="text" name="name" id="modal-form__name" placeholder="Ваше имя">
+					</div>
+					<div class="form-control">
+					    <input type="text" name="phone" id="modal-form__phone" placeholder="Ваш номер телефона" required>
+					    <div class="chose-mask">
+					    	<div class="flag by"></div>
+					    	<div class="iti-arrow"></div>
+					    </div>
+					    <ul class="dropdown">
+							<li data-country="by">Belarus (Беларусь) +375</li>
+							<li data-country="ru">Russia (Россия) +7</li>
+							<li data-country="ua">Ukraine (Україна) +380</li>
+						</ul>
+					</div>
+					<div class="modal-form__button">
+						<button class="button input" type="submit">Получить программу</button>
+					</div>
+					<div class="input-info">
+					</div>
+				</form>
+			</div>
+        </div><!-- content -->
+    </div><!-- modal -->
+
+    <div class="modal modal_senks" data-target="senks">
+        <a class="close-modal">✖</a><!-- close modal -->
+        <div class="modal-content">
+        	<div>
+        		<div class="check"><span><i class="fas fa-check"></i></span></div>
+        		<strong>Ваш заказ принят.</strong> <br>
+				Ожидайте звонка
+			</div>
+        </div><!-- content -->
+        <div class="flover">
+			<img src="images/dest/flover.png" alt="flover">
+		</div>
+    </div><!-- modal -->
+                    
+</div><!-- overlay -->
+
+	<script src="js/app.min.js"></script>
+
+</body>
+</html>
