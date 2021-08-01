@@ -1,0 +1,114 @@
+<section>
+    <section>
+        <h4>observable и observer - декораторы</h4>
+        <pre>
+            <code data-trim data-noescape data-line-numbers="1|3-8|10-19|21-30">
+                <script type='text/template'>
+                    configure({ enforceActions: 'observed' });
+
+                    class Store {
+                        @observable devsList = [
+                            { name: "Jack", sp: 12 },
+                            { name: "Max", sp: 10 },
+                            { name: "Leo", sp: 8 },
+                        ];
+
+                        @computed filter: '';
+                        @computed get totalSum() {
+                            return ...
+                        };
+                        @computed get topPerformer() {
+                            return ...
+                        };
+                        @computed get filteredDevelopers() {
+                            return ...
+                        }
+
+                        @action clearList() {
+                            this.devsList = [];
+                        };
+                        @action addDeveloper(dev) {
+                            this.devsList.push(dev);
+                        };
+                        @action updateFilter(value) {
+                            this.filter = value;
+                        }
+                    };
+
+                    const appStore = new Store();
+                </script>
+            </code>
+        </pre>
+    </section>
+    <section>
+        <h3>Или можно использовать <span class="accent">decorate</span></h3>
+    </section>
+    <section>
+        <h4>observable и observer - декораторы</h4>
+        <h6>decorate</h6>
+        <pre>
+            <code data-trim data-noescape data-line-numbers="6|13-19|21-31|33-43|46-55">
+                <script type='text/template'>
+                    import { 
+                        observable, 
+                        computed, 
+                        configure, 
+                        action, 
+                        decorate 
+                    } from 'mobx';
+                    import { observer } from 'mobx-react';
+                    import DevTools from 'mobx-react-devtools';
+
+                    configure({ enforceActions: 'observed' });
+
+                    class Store {
+                        devsList = [
+                            { name: "Jack", sp: 12 },
+                            { name: "Max", sp: 10 },
+                                { name: "Leo", sp: 8 },
+                        ];
+                        filter: '';
+
+                        get totalSum() {
+                            return ...
+                        };
+
+                        get topPerformer() {
+                            return ...
+                        };
+
+                        get filteredDevelopers() {
+                            return ...
+                        }
+
+                        clearList() {
+                            this.devsList = [];
+                        };
+
+                        addDeveloper(dev) {
+                            this.devsList.push(dev);
+                        };
+
+                        updateFilter(value) {
+                            this.filter = value;
+                        }
+                    };
+
+                    decorate(Store, {
+                        devsList: observable,
+                        filter: observable,
+                        totalSum: computed,
+                        topPerformer: computed,
+                        filteredDevelopers: computed,
+                        clearList: action,
+                        addDeveloper: action,
+                        updateFilter: action,
+                    })
+
+                    const appStore = new Store();
+                </script>
+            </code>
+        </pre>
+    </section>
+    
+</section>

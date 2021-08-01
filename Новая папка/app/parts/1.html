@@ -1,0 +1,84 @@
+<section class="slide1">
+    <h1 class="accent">MobX</h1>
+</section>
+
+<section class="slide2">
+    <section><h2>Основные концепции</h2></section>
+    
+    <section class="fade-up">
+        <h2>Основные концепции</h2>
+        <img src="./images/1.png" alt="1">
+    </section>
+    <section class="fade-up">
+        <h2>Основные концепции</h2>
+        <img src="./images/2.png" alt="2">
+    </section>
+</section>
+
+<section>
+    <section>
+        <h3>State</h3>
+        <ul>
+            <li class="fragment fade-up">Графы объектов, массивов, примитивов, ссылок которые формотируют модель вашего приложения</li>
+            <li class="fragment fade-up">Аналог в Redux - state</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Actions</h3>
+        <ul>
+            <li class="fragment fade-up">Это те штуки каторые меняют состоянии </li>
+            <li class="fragment fade-up">MobX следит, чтобы все изменения в состоянии, вызванные действиями, автоматически обрабатывались всеми производными и реакциями</li>
+            <li class="fragment fade-up">Аналог в Redux - actions и action creators</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Derivations</h3>
+        <ul>
+            <li class="fragment fade-up">Любое значение, которое может быть вычислено автоматически из данных состояния</li>
+            <li class="fragment fade-up">Аналог в Redux - selecrors</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Reactions</h3>
+        <ul>
+            <li class="fragment fade-up">Запускаются автоматически, чтобы выполнить какую-то работу при изменении состояния</li>
+            <li class="fragment fade-up">Аналог в Redux - subscribe</li>
+            <li class="fragment fade-up">Аналог в React Redux - connect</li>
+        </ul>
+    </section>
+</section>
+
+<section>
+    <img src="./images/3.png" alt="3">
+</section>
+
+<section>
+    <section>
+        <h2>Основные различия Redux и Mobx</h2>
+    </section>
+    <section class="table">
+        <table>
+            <tr>
+                <th></th>
+                <th>Паттерн</th>
+                <th>Имутабельность</th>
+                <th>Свободная архитектура</th>
+                <th>Количество кода</th>
+            </tr>
+            <tr>
+                <th>Rexux</th>
+                <th>Диктует свой подход</th>
+                <th>Да</th>
+                <th>Нет</th>
+                <th>Много</th>
+            </tr>
+            <tr>
+                <th>Mobx</th>
+                <th>"Наблюдатель" с реактивными данными</th>
+                <th>Нет</th>
+                <th>Да</th>
+                <th>Примерно в 3 раза меньше</th>
+            </tr>
+        </table>
+    </section>
+</section>

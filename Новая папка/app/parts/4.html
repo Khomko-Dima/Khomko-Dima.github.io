@@ -1,0 +1,82 @@
+<section>
+    <section>
+        <h4>observable и observer - Class</h4>
+        <h6>computed value (селектор redux)</h6>
+        <pre>
+            <code data-trim data-noescape data-line-numbers="0|5-12|14-20|22-38">
+                <script type='text/template'>
+                    import DevTools from 'mobx-react-devtools';
+                    import { observable, computed } from 'mobx';
+                    import { observer } from 'mobx-react';
+    
+                    const nickName = new class UserNickName {
+                        @observable firstName = 'Dima';
+                        @observable age = 27;
+    
+                        @computed get nickName() {
+                            return `${this.firstName}${this.age}`;
+                        }
+                    }
+    
+                    nickName.increment = function() {
+                        this.age++
+                    }
+    
+                    nickName.decrement = function() {
+                        this.age--
+                    }
+    
+                    @observer class Counter extends Component {
+    
+                        handleIncrement = () => { this.props.store.increment() };
+                        handleDecrement = () => { this.props.store.decrement() };
+    
+                        render() {
+                            return (
+                            <div className="App">
+                                <DevTools />
+                                <h1>{this.props.store.nickName}</h1>
+                                <h1>{this.props.store.age}</h1>
+                                <button onClick={this.handleDecrement}>-1</button>
+                                <button onClick={this.handleIncrement}>+1</button>
+                            </div>
+                            );
+                        }
+                    }
+                </script>
+            </code>
+        </pre>
+    </section>
+    <section>
+        <h2>Упростим с помощью <span class="accent">extendObservable</span></h2>
+    </section>
+    <section>
+        <h4>observable и observer - Class</h4>
+        <h6>extendObservable</h6>
+        <pre>
+            <code data-trim data-noescape data-line-numbers="2|5-17">
+                <script type='text/template'>
+                    import DevTools from 'mobx-react-devtools';
+                    import { observable, computed, extendObservable } from 'mobx';
+                    import { observer } from 'mobx-react';
+    
+                    const nickName = new class UserNickName {
+
+                        constructor() {
+                            extendObservable(this, {
+                                firstName: 'Dima',
+                                age: 27
+                            })
+                        }
+    
+                        @computed get nickName() {
+                            return `${this.firstName}${this.age}`;
+                        }
+                    }
+    
+                </script>
+            </code>
+        </pre>
+    </section>
+    
+</section>

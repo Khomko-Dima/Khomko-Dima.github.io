@@ -1,0 +1,79 @@
+<section>
+    <section>
+        <h2>Асинхронный экшены</h2>
+    </section>
+    <section>
+        <pre>
+            <code data-trim data-noescape data-line-numbers="0|4-12|8-16|21">
+                <script type='text/template'>
+                    class Store {
+                        user: null;
+
+                        getUser() {
+                            fetch('https://randomuser.me/api/')
+                            .then(res => res.json())
+                            .then(json => {
+                                if(json.results) {
+                                    this.setUser(json.results);
+                                }
+                            })
+                        }
+                    
+                        setUser(results) {
+                            this.user = results[0];
+                        }
+                    };
+                    
+                    decorate(Store, {
+                        user: observable,
+                        getUser: action.bound,
+                        setUser: action,
+                    })
+                </script>
+            </code>
+        </pre>
+    </section>
+    <section>
+        <h4 class="accent">runInAction</h4>
+        <pre>
+            <code data-trim data-noescape data-line-numbers="7|13-23|18-">
+                <script type='text/template'>
+                    import { 
+                        observable, 
+                        computed, 
+                        configure, 
+                        action, 
+                        decorate, 
+                        runInAction 
+                    } from 'mobx';
+
+                    class Store {
+                        user: null;
+
+                        getUser() {
+                            fetch('https://randomuser.me/api/')
+                            .then(res => res.json())
+                            .then(json => {
+                                if(json.results) {
+                                    runInAction(() => {
+                                        this.user = json.results[0];
+                                    })
+                                }
+                            })
+                        }
+                    
+                        setUser(results) {
+                            this.user = results[0];
+                        }
+                    };
+                    
+                    decorate(Store, {
+                        user: observable,
+                        getUser: action.bound,
+                        setUser: action,
+                    })
+                </script>
+            </code>
+        </pre>
+    </section>
+</section>

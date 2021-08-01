@@ -1,0 +1,35 @@
+<section>
+    <h4>observable и observer</h4>
+    <pre>
+        <code data-trim data-noescape data-line-numbers="1|15|2,3|5|7|9,10|16-18">
+            <script type='text/template'>
+                import DevTools from 'mobx-react-devtools';
+                import { observable } from 'mobx';
+                import { observer } from 'mobx-react';
+
+                @observer class Counter extends Component {
+
+                    @observable count = 0;
+
+                    handleIncrement = () => { this.count++ };
+                    handleDecrement = () => { this.count-- };
+
+                    render() {
+                        return (
+                        <div className="App">
+                            <DevTools />
+                            <h1>{this.props.store.count}</h1>
+                            <button onClick={this.handleDecrement}>-1</button>
+                            <button onClick={this.handleIncrement}>+1</button>
+                        </div>
+                        );
+                    }
+                }
+
+                ReactDOM.render(
+                    <Counter store={counterState} />, 
+                    document.getElementById('root'));
+            </script>
+        </code>
+    </pre>
+</section>

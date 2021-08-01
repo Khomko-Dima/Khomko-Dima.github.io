@@ -1,0 +1,43 @@
+<section>
+    <section>
+        <h4>makeAutoObservable и HOC</h4>
+        <pre>
+            <code data-trim data-noescape data-line-numbers="1|5-19|8-10|21|24-28">
+                <script type='text/template'>
+                    import { makeAutoObservable } from "mobx"
+                    import { observer } from "mobx-react"
+
+                    
+                    class Counter {
+                        count = 0
+
+                        constructor() {
+                            makeAutoObservable(this)
+                        }
+
+                        increase() {
+                            this.count += 1
+                        }
+
+                        reset() {
+                            this.count = 0
+                        }
+                    }
+
+                    const myCounter = new Counter()
+
+                    
+                    const CounterView = observer(({ counter }) => (
+                        <button onClick={() => counter.reset()}>
+                            count: {counter.count}
+                        </button>
+                    ))
+
+                    ReactDOM.render(
+                        <CounterView counter={myCounter} />, 
+                        document.body)
+                </script>
+            </code>
+        </pre>
+    </section>
+</section>
